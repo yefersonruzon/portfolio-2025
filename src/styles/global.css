@@ -2,9 +2,11 @@
 
 @theme{
     --color-primary:#377DFF;
+    --color-primary-hover:#377DFF;
     /* --color-secondary:#121517; */
     /* --color-tertiary:#121517; */
     --color-bg:#121517;
+    --color-bg-500:#12151767;
     --color-text:#fff;
     --color-shadow:#13161a;
     --color-text-details:#a5a5a5;
@@ -19,41 +21,27 @@ body {
     margin: 0;
     margin: 0;
     width: 100%;
-    height: 100%;
+    height: fit-content;
     background-color: var(--color-bg);
     color: var(--color-text);
     max-width: 100dvw;
     overflow-x: hidden;
     font-family: var(--font-outfit);
 }
-
-.gradient-border {
-    color: white;
-    padding: 8px 25px;
-    --border-angle: 0turn;
-    --main-bg: conic-gradient(from var(--border-angle), var(--color-bg), var(--color-bg) 5%, var(--color-bg) 60%, var(--color-bg) 95%);
-    --gradient-border: conic-gradient(from var(--border-angle), transparent 5%, #ffffff02, #ffffffa6 50%, transparent);
-    
-    border: solid 0.1px transparent;
-    border-radius: 1.5em;
-    background: var(--main-bg) padding-box, var(--gradient-border) border-box, var(--main-bg) border-box;
-    background-position: center center;
-    animation: bg-spin 10s linear infinite;
-  }
-  
-  @keyframes bg-spin {
-    to {
-      --border-angle: 1turn;
-    }
-  }
-  
-  @property --border-angle {
-    syntax: "<angle>";
-    inherits: true;
-    initial-value: 0turn;
-  }
   
   .shadowLandingForm{
       box-shadow: 0px .5px 1px #ffffff86;
+  }
+  
+  .bgimage{
+    background-image: url('../assets/Icons/curve.svg');
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: visible;
+    &.nav{
+        background-image: url('../assets/Icons/curve3.svg');
+        background-position: 50% 105%;
+    }
   }
   

@@ -42,13 +42,13 @@ export default function IDE() {
     const removeRecentSection = (section: string) => {
         setRecentSections(prevSections => {
             const updatedSections = prevSections.filter(s => s !== section);
-            const newActiveSection = prevSections[prevSections.indexOf(section) - 1] || updatedSections[updatedSections.length - 1] || 'Index.me';
+            const newActiveSection = prevSections[prevSections.indexOf(section) - 1] || updatedSections[updatedSections.length - 1] ;
             setActiveSection(newActiveSection);
             return updatedSections;
         });
     };
 
-    
+
   return (
     <div className="h-[82dvh] flex bg-bg z-10 flex-col shadow text-gray-400 shadow-shadow border w-full rounded-xl overflow-hidden border-details">
 				<header className="flex px-7 py-5 border border-details">
@@ -65,7 +65,7 @@ export default function IDE() {
 								<li className="hover:text-white">Help</li>
 							</ul>
 						</div>
-						<h5 className="mx-auto font-light text-sm">Portfolio - {ActiveSection}</h5>
+						<h5 className="mx-auto font-light text-sm">Portfolio{ActiveSection ? ' - ' + ActiveSection : ''}</h5>
 						<ol className="flex text-white items-center justify-center -my-2 -mr-3 ml-auto">
 							<li className="hover:bg-details w-10 h-10 flex items-center justify-center"><img src={recIcon.src} alt="min icon" /></li>
 							<li className="hover:bg-details w-10 h-10 flex items-center justify-center"><img src={maxIcon.src} alt="max icon" /></li>
@@ -104,7 +104,7 @@ export default function IDE() {
 								<ol className="ml-4 " id="srcSub">
 									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'assets' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('assets')}><p>assets</p></li>
 									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'components' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('components')}><p>components</p></li>
-									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'layouts' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('layouts')}><p>layouts</p></li>
+									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'mobile' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('mobile')}><p>mobile</p></li>
 									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'styles' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('styles')}><p>styles</p></li>
 									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'Index.me' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('Index.me')}><p>index.me</p></li>
 								</ol>
@@ -116,18 +116,40 @@ export default function IDE() {
 						</ul>
 					</div>
                     <div className='w-full h-full flex flex-col py-2'>
-                        <div className='flex gap-3 w-full  px-5  border-details'>
-                            {recentSections.map((section, index) => (
-                                <button key={index} className={`${ActiveSection === section ? ' bg-primary text-white' : ''} text-sm hover:text-white flex bg-details rounded-sm px-2 py-1.5 my-1.5 border border-details cursor-pointer transition-all`} onClick={() => setActiveSection(section)}>
-                                    <p className="inline-block">{section}</p>
-                                    {
-                                        ActiveSection === section && (
-                                            <button className='h-full px-2' onClick={() => removeRecentSection(section)}>x</button>
-                                        )
-                                    }
-                                </button>
-                            ))}
+                        <div className='flex gap-3 w-full  px-5 border-b pb-2  border-details min-h-10'>
+                            {
+                            recentSections.map((section, index) => (
+                                section && (
+                                    <div key={index} className={`${ActiveSection === section ? ' bg-primary text-white' : ''} text-sm items-center hover:text-white flex bg-details rounded-sm px-2 py-1.5 my-1.5 border border-details cursor-pointer transition-all`} onClick={() => setActiveSection(section)}>
+                                        <p className='pb-0.5'>{section}</p>
+                                        {ActiveSection === section && (
+                                            <button className='h-full px-2 pb-1.5' onClick={() => removeRecentSection(section)}>x</button>
+                                        )}
+                                    </div>
+                                )
+                            ))
+                            }
                         </div>
+                        <code className='w-full h-[75%] px-5 py-2'>
+                            {ActiveSection === 'Index.me' && (
+                                <div className="flex flex-col gap-2">
+                                    <p className="text-sm font-light">Index.me</p>
+                                    <p className="text-sm font-light">Home</p>
+                                </div>
+                            )}
+                        </code>
+                        <section className="w-full h-[25%] flex flex-col border-t border-details">
+                            <div className='w-full text-sm flex border-b border-details justify-between px-8 py-4'>
+                                <div className='flex gap-5'>
+                                    <p className='relative after:absolute after:w-1/2 after:h-0.5 after:bg-text-details flex items-center justify-center after:-bottom-0.5 after:rounded-md'>Terminal</p>
+                                    <p className='relative flex items-center justify-center'>Output</p>
+                                </div>
+                                <button className='text-lg'>x</button>
+                            </div>
+                            <p className='text-sm ml-8 mt-3'>
+                                C:\Users\ruzon{'>'}
+                            </p>
+                        </section>
                     </div>
 				</aside>
 			</div>
