@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import mailIcon from '../assets/Icons/mail.svg'
+
+import curveIcon from '../assets/Icons/curve.svg'
+import IDE from '../components/react/IDE';
+
+---
+
+<Layout>
+	<main class="px-28 h-fit relative">
+		<svg class="absolute pointer-events-none w-screen left-0 z-0" width="1566" height="1082" viewBox="0 0 1566 1082" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M-305 277.5C-129.833 125.5 270.5 -131.3 470.5 57.5C595.681 175.671 400.142 420.146 154.343 643.409C88.8627 702.886 160.526 834.902 244.048 805.757L501.738 715.834C575.43 690.118 649.883 793.078 633.19 869.322C609.595 977.087 654.491 1071.93 865 1081C1004.83 1078.17 1559 998.3 1565 677.5C1571 356.7 1292.5 260.5 1203.5 234C971.333 172.167 709.4 15.9 1493 -74.5" stroke="#262727"/>
+		</svg>
+		<section class="min-h-[72dvh] h-fit text-center w-full flex items-center flex-col gap-3 justify-center">
+			<b class="gradient-border font-light mt-20 text-sm">Yeferson Ruzon</b>
+			<h1 class="text-7xl font-montserrat font-semibold">Creative <span class="relative"><img src={curveIcon.src} alt="curve svg" class="absolute right-1 -z-0 bottom-2"><b class="relative font-semibold">UI/UX</b></span> <br> Designer & Web <br> Front-End Dev<span class="text-primary">.</span></h1>
+			<p class="max-w-fit text-sm text-text-details">Hola, soy Yeferson Ruzon, un apasionado UI/UX Designer & Web Front-End <br> Developer de 21 años. Mi enfoque se centra en crear experiencias digitales que no <br> solo sean visualmente atractivas, sino también intuitivas y funcionales. Combino  <br> mis habilidades de diseño UI/UX con un sólido conocimiento en desarrollo front-end  <br> para construir interfaces de usuario.</p>
+			<div class="flex  items-center justify-center bg-bg border-details shadow shadow-shadow border-2 rounded-full px-5 py-2 pr-2  mt-5">
+				<img src={mailIcon.src} alt="mail icon" class="w-5">
+				<input type="email" placeholder="Enter your email" class="w-full focus:outline-none pl-3 pr-10">
+				<button class="text-sm py-2.5 px-5 bg-details rounded-full shadow">Contact</button>
+			</div>
+		</section>
+		<section class="flex items-center mb-10 justify-center w-full h-fit">
+			<IDE client:only />
+		</section>
+	</main>
+</Layout>
