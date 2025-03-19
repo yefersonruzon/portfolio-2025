@@ -9,7 +9,7 @@ import menudotsIcon from '../../assets/Icons/menudots.svg'
 import { useState, useEffect, type JSX } from 'react'
 
 export default function IDE() {
-    const [ActiveSection, setActiveSection] = useState('Index.me');
+    const [ActiveSection, setActiveSection] = useState('Index.astro');
     const [recentSections, setRecentSections] = useState<string[]>([]);
 
     useEffect(() => {
@@ -48,6 +48,82 @@ export default function IDE() {
         });
     };
 
+    const renderActiveSection = () => {
+        switch (ActiveSection) {
+            case 'Index.astro':
+                return (
+                    <div className="flex flex-col gap-2 text-gray-300">
+                        <p className="text-sm font-light">
+                            <span className='pr-2'>---</span><br /> 
+                                <span className="text-sm"><span className='text-purple-400'>import</span> [JavaScript, TypeScript, ReactJs, Zustand, MongoDB, Axios, Tailwind, ThreeJS, Astro] <span className='text-purple-400'>from</span> 'Web-Development';</span><br />
+                                <span className="text-sm"><span className='text-purple-400'>import</span> [ReactNative, Kotlin, Compose, AndroidStudio] <span className='text-purple-400'>from</span> 'Mobile-Development';</span><br />
+                                <span className="text-sm"><span className='text-purple-400'>import</span> [Sketch, Figma, Framer, WireframeCC] <span className='text-purple-400'>from</span> 'UI/UX-Design';</span><br />
+                                <span className="text-sm"><span className='text-purple-400'>import</span> [Illustrator, Blender, AfterEffects] <span className='text-purple-400'>from</span> 'Dynamic-Web-Graphics';</span><br />
+                            <span className='pr-2'>---</span>
+                        </p>
+                        <p className="text-sm font-light">
+                            <span className='text-primary'><span className='text-gray-500'>{`<`}</span>Layout<span className='text-gray-500'>{`>`}</span></span> <br />
+                            <span className='text-primary ml-4'><span className='text-gray-500'>{`<`}</span>h1<span className='text-gray-500'>{`>`}</span></span> <br />
+                                <span className='ml-10'>Hi!👋, I'm Yeferson Ruzon, Web front-end developer & UI/UX Designer.</span> <br />
+                            <span className='text-primary ml-4'><span className='text-gray-500'>{`</`}</span>h1<span className='text-gray-500'>{`>`}</span></span> <br />
+                            
+                            <span className='text-primary ml-4'><span className='text-gray-500'>{`<`}</span>p<span className='text-gray-500'>{`>`}</span></span> <br />
+                            <span className='ml-10 block'>
+                                I'm a passionate UI/UX Designer & Web Front-End Developer of 21 years old. <br /> 
+                                My focus is on creating digital experiences that are not only visually appealing <br />
+                                but also intuitive and functional. I combine my UI/UX design skills with <br />
+                                a strong background in front-end development to build user interfaces that trul resonate with users.</span> <br />
+                            <span className='ml-10 block'>
+                                My journey has equipped me with a unique blend of design thinking and technical <br />
+                                proficiency, enabling me to bridge the gap between aesthetics and functionality. <br />
+                                Whether it's crafting pixel-perfect designs or writing clean, efficient code, I am committed to <br />
+                                creating digital products that leave a lasting impact.</span>
+                            <span className='text-primary ml-4'><span className='text-gray-500'>{`</`}</span>p<span className='text-gray-500'>{`>`}</span></span>
+                            <br />
+                            <span className='text-primary'><span className='text-gray-500'>{`</`}</span>Layout<span className='text-gray-500'>{`>`}</span></span>
+                        </p>
+                    </div>
+                );
+            case 'Freelance' : 
+                return (
+                    <div className="flex flex-col gap-2 text-gray-300">
+                        <p className="text-sm font-light">
+                            <span className='pr-2'>---</span><br /> 
+                                <span className="text-sm"><span className='text-purple-400'>import</span> [JavaScript, TypeScript, ReactJs, Zustand, MongoDB, Axios, Tailwind, ThreeJS, Astro] <span className='text-purple-400'>from</span> 'Web-Development';</span><br />
+                                <span className="text-sm"><span className='text-purple-400'>import</span> [ReactNative, Kotlin, Compose, AndroidStudio] <span className='text-purple-400'>from</span> 'Mobile-Development';</span><br />
+                                <span className="text-sm"><span className='text-purple-400'>import</span> [Sketch, Figma, Framer, WireframeCC] <span className='text-purple-400'>from</span> 'UI/UX-Design';</span><br />
+                                <span className="text-sm"><span className='text-purple-400'>import</span> [Illustrator, Blender, AfterEffects] <span className='text-purple-400'>from</span> 'Dynamic-Web-Graphics';</span><br />
+                            <span className='pr-2'>---</span>
+                        </p>
+                        <p className="text-sm font-light">
+                            <span className='text-primary'><span className='text-gray-500'>{`<`}</span>Layout<span className='text-gray-500'>{`>`}</span></span> <br />
+                            <span className='text-primary ml-4'><span className='text-gray-500'>{`<`}</span>h1<span className='text-gray-500'>{`>`}</span></span> <br />
+                                <span className='ml-10'>Hi!👋, I'm Yeferson Ruzon, Web front-end developer & UI/UX Designer.</span> <br />
+                            <span className='text-primary ml-4'><span className='text-gray-500'>{`</`}</span>h1<span className='text-gray-500'>{`>`}</span></span> <br />
+                            
+                            <span className='text-primary ml-4'><span className='text-gray-500'>{`<`}</span>p<span className='text-gray-500'>{`>`}</span></span> <br />
+                            <span className='ml-10 block'>
+                                I'm a passionate UI/UX Designer & Web Front-End Developer of 21 years old. <br /> 
+                                My focus is on creating digital experiences that are not only visually appealing <br />
+                                but also intuitive and functional. I combine my UI/UX design skills with <br />
+                                a strong background in front-end development to build user interfaces that trul resonate with users.</span> <br />
+                            <span className='ml-10 block'>
+                                My journey has equipped me with a unique blend of design thinking and technical <br />
+                                proficiency, enabling me to bridge the gap between aesthetics and functionality. <br />
+                                Whether it's crafting pixel-perfect designs or writing clean, efficient code, I am committed to <br />
+                                creating digital products that leave a lasting impact.</span>
+                            <span className='text-primary ml-4'><span className='text-gray-500'>{`</`}</span>p<span className='text-gray-500'>{`>`}</span></span>
+                            <br />
+                            <span className='text-primary'><span className='text-gray-500'>{`</`}</span>Layout<span className='text-gray-500'>{`>`}</span></span>
+                        </p>
+                    </div>
+                );
+
+            default:
+                break;
+        }
+    return null;
+};
 
   return (
     <div className="h-[82dvh] flex bg-bg z-10 flex-col shadow text-gray-400 shadow-shadow border w-full rounded-xl overflow-hidden border-details">
@@ -106,7 +182,7 @@ export default function IDE() {
 									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'components' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('components')}><p>components</p></li>
 									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'mobile' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('mobile')}><p>mobile</p></li>
 									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'styles' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('styles')}><p>styles</p></li>
-									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'Index.me' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('Index.me')}><p>index.me</p></li>
+									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'Index.astro' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('Index.astro')}><p>index.astro</p></li>
 								</ol>
 							</li>
 							
@@ -131,12 +207,7 @@ export default function IDE() {
                             }
                         </div>
                         <code className='w-full h-[75%] px-5 py-2'>
-                            {ActiveSection === 'Index.me' && (
-                                <div className="flex flex-col gap-2">
-                                    <p className="text-sm font-light">Index.me</p>
-                                    <p className="text-sm font-light">Home</p>
-                                </div>
-                            )}
+                            {renderActiveSection()}
                         </code>
                         <section className="w-full h-[25%] flex flex-col border-t border-details">
                             <div className='w-full text-sm flex border-b border-details justify-between px-8 py-4'>

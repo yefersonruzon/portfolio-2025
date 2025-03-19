@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import menu from '../../assets/Icons/menu.svg'
 
 export default function Nav() {
     const [scrolled, setScrolled] = useState(false);
