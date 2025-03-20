@@ -45,3 +45,7 @@ body {
     }
   }
   
+.hljs{
+    background: var(--color-bg) !important;
+    margin-left:-10px;
+}

@@ -6,7 +6,17 @@ import searchIcon from "../../assets/Icons/Search.svg";
 import categoryIcon from "../../assets/Icons/category.svg";
 import settingIcon from "../../assets/Icons/setting.svg";
 import menudotsIcon from "../../assets/Icons/menudots.svg";
-import { useState, useEffect, type JSX } from "react";
+import { useState, useEffect } from "react";
+import ReactMarkdown from 'react-markdown';
+
+import expContent from './IDESections/Exp.md?raw';
+import IGdContent from './IDESections/IGD.md?raw';
+import FreelancerContent from './IDESections/Freelancer.md?raw';
+import AboutContent from './IDESections/About.md?raw';
+
+import rehypeHighlight from 'rehype-highlight';
+// import 'highlight.js/styles/tokyo-night-dark.css';
+import 'highlight.js/styles/atom-one-dark.css';
 
 export default function IDE() {
   const [ActiveSection, setActiveSection] = useState("About.astro");
@@ -53,344 +63,31 @@ export default function IDE() {
     });
   };
 
-  
-
 
   const renderActiveSection = () => {
     switch (ActiveSection) {
       case "About.astro":
-        return (
-          <div className="flex flex-col gap-2 text-gray-300">
-            <p className="text-sm font-light">
-              <span className="pr-2 text-green-600">---</span>
-              <br />
-              <span className="text-sm">
-                <span className="text-purple-400">import</span> [JavaScript,
-                TypeScript, ReactJs, Zustand, MongoDB, Axios, Tailwind, ThreeJS,
-                Astro] <span className="text-purple-400">from</span>{" "}
-                'Web-Development';
-              </span>
-              <br />
-              <span className="text-sm">
-                <span className="text-purple-400">import</span> [ReactNative,
-                Kotlin, Compose, AndroidStudio]{" "}
-                <span className="text-purple-400">from</span>{" "}
-                'Mobile-Development';
-              </span>
-              <br />
-              <span className="text-sm">
-                <span className="text-purple-400">import</span> [Sketch, Figma,
-                Framer, WireframeCC]{" "}
-                <span className="text-purple-400">from</span> 'UI/UX-Design';
-              </span>
-              <br />
-              <span className="text-sm">
-                <span className="text-purple-400">import</span> [Illustrator,
-                Blender, AfterEffects]{" "}
-                <span className="text-purple-400">from</span>{" "}
-                'Dynamic-Web-Graphics';
-              </span>
-              <br />
-              <span className="pr-2 text-green-600">---</span>
-            </p>
-            <p className="text-sm font-light">
-              <span className="text-primary">
-                <span className="text-gray-500">{`<`}</span>Layout
-                <span className="text-gray-500">{`>`}</span>
-              </span>{" "}
-              <br />
-              <span className="text-primary ml-4">
-                <span className="text-gray-500">{`<`}</span>h1
-                <span className="text-gray-500">{`>`}</span>
-              </span>{" "}
-              <br />
-              <span className="ml-10">
-                Hi!👋, I'm Yeferson Ruzon, Web front-end developer & UI/UX
-                Designer.
-              </span>{" "}
-              <br />
-              <span className="text-primary ml-4">
-                <span className="text-gray-500">{`</`}</span>h1
-                <span className="text-gray-500">{`>`}</span>
-              </span>{" "}
-              <br />
-              <span className="text-primary ml-4">
-                <span className="text-gray-500">{`<`}</span>p
-                <span className="text-gray-500">{`>`}</span>
-              </span>{" "}
-              <br />
-              <span className="ml-10 block">
-                I'm a passionate UI/UX Designer & Web Front-End Developer of 21
-                years old. <br />
-                My focus is on creating digital experiences that are not only
-                visually appealing <br />
-                but also intuitive and functional. I combine my UI/UX design
-                skills with <br />a strong background in front-end development
-                to build user interfaces that trul resonate with users.
-              </span>{" "}
-              <br />
-              <span className="ml-10 block">
-                My journey has equipped me with a unique blend of design
-                thinking and technical <br />
-                proficiency, enabling me to bridge the gap between aesthetics
-                and functionality. <br />
-                Whether it's crafting pixel-perfect designs or writing clean,
-                efficient code, I am committed to <br />
-                creating digital products that leave a lasting impact.
-              </span>
-              <span className="text-primary ml-4">
-                <span className="text-gray-500">{`</`}</span>p
-                <span className="text-gray-500">{`>`}</span>
-              </span>
-              <br />
-              <span className="text-primary">
-                <span className="text-gray-500">{`</`}</span>Layout
-                <span className="text-gray-500">{`>`}</span>
-              </span>
-            </p>
-          </div>
-        );
+        return (<ReactMarkdown rehypePlugins={[rehypeHighlight]}>{AboutContent as string}</ReactMarkdown>)
       case "Freelance.json":
-        return (
-          <div className="flex flex-col gap-2 text-gray-300">
-            <pre className="text-sm font-light">
-              <span className="text-yellow-300">{`{`}</span>
-              <ol className="list-none">
-                <li className="text-purple-400 ml-4">{`"FreelanceExperience": {`}</li>
-                <li className="text-[#f1a181] ml-8">"company": "Freelance",</li>
-                <li className="text-[#f1a181] ml-8">"startDate": "2020",</li>
-                <li className="text-[#f1a181] ml-8">"endDate": "null",</li>
-                <li className="text-purple-400 ml-8">{`"Most-relevant-projects": {`}</li>
-                <ol className="list-none ml-12">
-                  <li className="text-[#f1a181]">"Solei",</li>
-                  <li className="text-[#f1a181]">"Trady",</li>
-                  <li className="text-[#f1a181]">"Inverbello",</li>
-                  <li className="text-[#f1a181]">"Suvalor",</li>
-                  <li className="text-[#f1a181]">"Domus"</li>
-                </ol>
-                <li className="text-purple-400 ml-8">{`}`}</li>
-                <li className="text-purple-400 ml-8">{`"summary": {`}</li>
-                <p className="text-[#f1a181] ml-12">
-                  "Desde 2020, he trabajado en proyectos como Hoteles y
-                  restaurantes, Páginas interactivas para criptomonedas. <br />{" "}
-                  Usé tecnologías como HTML, CSS, JavaScript, TypeScript, React,
-                  Next.js y herramientas de diseño como Figma, Wireframe.cc.",
-                </p>
-                <li className="text-purple-400 ml-8">{`}`}</li>
-                <li className="text-purple-400 ml-8">{`"designTools": {`}</li>
-                <ol className="list-none ml-12">
-                  <li className="text-[#f1a181]">"Figma",</li>
-                  <li className="text-[#f1a181]">"Wireframe.cc",</li>
-                  <li className="text-[#f1a181]">"illustrator",</li>
-                  <li className="text-[#f1a181]">"Blender",</li>
-                  <li className="text-[#f1a181]">"Framer",</li>
-                </ol>
-                <li className="text-purple-400 ml-8">{`}`}</li>
-                <li className="text-purple-400 ml-8">{`"technologies": {`}</li>
-                <ol className="list-none ml-12">
-                  <li className="text-[#f1a181]">"React",</li>
-                  <li className="text-[#f1a181]">"HTML",</li>
-                  <li className="text-[#f1a181]">"CSS",</li>
-                  <li className="text-[#f1a181]">"Next.js",</li>
-                  <li className="text-[#f1a181]">"Tailwind CSS",</li>
-                  <li className="text-[#f1a181]">"TypeScript",</li>
-                  <li className="text-[#f1a181]">"JavaScript"</li>
-                </ol>
-                <li className="text-purple-400 ml-8">{`}`}</li>
-                <li className="text-purple-400 ml-4">{`}`}</li>
-              </ol>
-              <span className="text-yellow-300">{`}`}</span>
-            </pre>
-          </div>
-        );
+        return (<ReactMarkdown rehypePlugins={[rehypeHighlight]}>{FreelancerContent as string}</ReactMarkdown>)
       case "IGD_S.A.S.json":
-        return (
-          <div className="flex flex-col gap-2 text-gray-300">
-            <pre className="text-sm font-light">
-              <span className="text-yellow-300">{`{`}</span>
-              <ol className="list-none">
-                <li className="text-purple-400 ml-4">{`"FreelanceExperience": {`}</li>
-                <li className="text-[#f1a181] ml-8">"company": "IGD S.A.S",</li>
-                <li className="text-[#f1a181] ml-8">
-                  "startDate": "Oct-2022",
-                </li>
-                <li className="text-[#f1a181] ml-8">"endDate": "Feb-2025",</li>
-                <li className="text-purple-400 ml-8">{`"Most-relevant-projects": {`}</li>
-                <ol className="list-none ml-12">
-                  <li className="text-[#f1a181]">"SmartCredit",</li>
-                  <li className="text-[#f1a181]">"igdsas.com",</li>
-                  <li className="text-[#f1a181]">"Finestar",</li>
-                  <li className="text-[#f1a181]">"Trady web & software",</li>
-                </ol>
-                <li className="text-purple-400 ml-8">{`}`}</li>
-                <li className="text-purple-400 ml-8">{`"summary": {`}</li>
-                <p className="text-[#f1a181] ml-12">
-                  "I have been working as a front-end web developer at I.G.D, a
-                  company specialised in software consulting and design. <br />{" "}
-                  In this position with a full team, collaborating on various
-                  projects and maintaining a high standard. <br /> During my
-                  time at the company, I have worked with technologies such as
-                  ReactJS, ViteJS, Tailwind, NextJS, <br /> and Zustand, among
-                  others. I am also the lead designer for the company, creating
-                  interactive web <br /> and mobile designs with Figma and using
-                  advanced prototyping techniques."
-                </p>
-                <li className="text-purple-400 ml-8">{`}`}</li>
-                <li className="text-purple-400 ml-8">{`"designTools": {`}</li>
-                <ol className="list-none ml-12">
-                  <li className="text-[#f1a181]">"Figma",</li>
-                  <li className="text-[#f1a181]">"Wireframe.cc",</li>
-                  <li className="text-[#f1a181]">"illustrator",</li>
-                  <li className="text-[#f1a181]">"Blender",</li>
-                  <li className="text-[#f1a181]">"Framer",</li>
-                </ol>
-                <li className="text-purple-400 ml-8">{`}`}</li>
-                <li className="text-purple-400 ml-8">{`"technologies": {`}</li>
-                <ol className="list-none ml-12">
-                  <li className="text-[#f1a181]">"React",</li>
-                  <li className="text-[#f1a181]">"HTML",</li>
-                  <li className="text-[#f1a181]">"CSS",</li>
-                  <li className="text-[#f1a181]">"Next.js",</li>
-                  <li className="text-[#f1a181]">"Tailwind CSS",</li>
-                  <li className="text-[#f1a181]">"TypeScript",</li>
-                  <li className="text-[#f1a181]">"JavaScript"</li>
-                </ol>
-                <li className="text-purple-400 ml-8">{`}`}</li>
-                <li className="text-purple-400 ml-4">{`}`}</li>
-              </ol>
-              <span className="text-yellow-300">{`}`}</span>
-            </pre>
-          </div>
-        );
+          return (<ReactMarkdown rehypePlugins={[rehypeHighlight]}>{IGdContent as string}</ReactMarkdown>)
       case "Exp.tsx":
         return (
-          <div className="flex items-center w-full">
-            <pre className="w-full">
-              <span className="text-sm">
-                <span className="text-purple-400">import</span> React{" "}
-                <span className="text-purple-400">from</span> 'react';
-              </span>
-              <br />
-              <br />
-              <span className="text-sm">
-                <span className="text-purple-400">interface</span> ExpProps{" "}
-                <span className="text-purple-400">{`{`}</span>
-                <br />
-                <span className="text-[#f1a181] ml-4">
-                  "technologies": <span className="text-purple-400">{`{`}</span>
-                </span>
-                <br />
-                <span className="text-[#f1a181] ml-8">
-                  name: <span className="text-purple-400">string</span>,
-                </span>
-                <br />
-                <span className="text-[#f1a181] ml-8">
-                  experience: <span className="text-purple-400">string</span>,
-                </span>
-                <br />
-                <span className="text-purple-400 ml-4">{`}`}</span> <br />
-                <span className="text-purple-400">{`}`}</span>
-              </span>
-              <br />
-              <span className="text-sm">
-                <span className="text-purple-400">const </span>
-                <span className="text-gray-400">Exp: </span>
-                <span className="text-purple-400">React.FC </span> {`= ()=> `}
-                <span className="text-purple-400">{`{`}</span>
-                <br />
-
-                <span className="text-purple-400 ml-4">const </span>
-                <span className="text-[#f1a181]">Skills </span>
-                <span className="text-purple-400 ">=</span> [ <br />
-
-                <span className="text-purple-400 ml-8">{`{ `}</span>
-                <span className="text-[#f1a181]">name:</span>
-                <span className="text-green-300">'TypeScript' </span>, 
-                <span className="text-[#f1a181]"> experience:</span>
-                <span className="text-green-300">'2.5 years of work experience'</span>
-                <span className="text-purple-400">{`}`}</span>,<br />
-
-
-                <span className="text-purple-400 ml-8">{`{ `}</span>
-                <span className="text-[#f1a181]">name:</span>
-                <span className="text-green-300">'Illustrator' </span>, 
-                <span className="text-[#f1a181]"> experience:</span>
-                <span className="text-green-300">'2.5 years of work experience'</span>
-                <span className="text-purple-400">{`}`}</span>,<br />
-                <span className="text-purple-400 ml-8">{`{ `}</span>
-                <span className="text-[#f1a181]">name:</span>
-                <span className="text-green-300">'Figma' </span>, 
-                <span className="text-[#f1a181]"> experience:</span>
-                <span className="text-green-300">'2.5 years of work experience'</span>
-                <span className="text-purple-400">{`}`}</span>,<br />
-                <span className="text-purple-400 ml-8">{`{ `}</span>
-                <span className="text-[#f1a181]">name:</span>
-                <span className="text-green-300">'Next.js' </span>, 
-                <span className="text-[#f1a181]"> experience:</span>
-                <span className="text-green-300">'2.5 years of work experience'</span>
-                <span className="text-purple-400">{`}`}</span>,<br />
-                <span className="text-purple-400 ml-8">{`{ `}</span>
-                <span className="text-[#f1a181]">name:</span>
-                <span className="text-green-300">'Astro' </span>, 
-                <span className="text-[#f1a181]"> experience:</span>
-                <span className="text-green-300">'1 year of work experience'</span>
-                <span className="text-purple-400">{`}`}</span>,<br />
-                <span className="text-purple-400 ml-8">{`{ `}</span>
-                <span className="text-[#f1a181]">name:</span>
-                <span className="text-green-300">'Kotlin' </span>, 
-                <span className="text-[#f1a181]"> experience:</span>
-                <span className="text-green-300">'No work experience'</span>
-                <span className="text-purple-400">{`}`}</span>,<br />
-                <span className="ml-8">];</span>
-                <br />
-                <span className="text-[#f1a181] ml-4">
-                  return<span className="text-purple-400">{`(`}</span>
-                </span>
-                <br />
-                <span className="text-purple-400 ml-8">{`<`}</span>
-                <span className="text-purple-400">div</span>
-                <span className="text-purple-400">{`>`}</span>
-                <br />
-                <p>
-                    <span className="text-purple-400 ml-12">{`<`}</span>
-                    <span className="text-purple-400">h2</span>
-                    <span className="text-purple-400">{`>`}</span>
-                        My skills
-                    <span className="text-purple-400">{`</`}</span>
-                    <span className="text-purple-400">h2</span>
-                    <span className="text-purple-400">{`>`}</span>
-                </p>
-                <p>
-                    <span className="text-purple-400 ml-12">{`<`}</span>
-                    <span className="text-purple-400">ul</span>
-                    <span className="text-purple-400">{`>{`} <br /> </span>
-                    <span>
-                    <span className="text-primary ml-12">{`skills.map((skill) {'=>'} (`}</span>
-                    <li className="list-none ml-20 text-[#f1a181]" key={'skill.name'}>
-                        <span>{'skill.name'}</span>
-                        <br />
-                        <span>{'skill.experience'}</span>
-                    </li>
-                    </span>
-                    <span className="text-purple-400 ml-12">{`}</`}</span>
-                    <span className="text-purple-400">ul</span>
-                    <span className="text-purple-400">{`>`}</span>
-                </p>
-            
-                <span className="text-purple-400 ml-8">{`</`}</span>
-                <span className="text-purple-400">div</span>
-                <span className="text-purple-400">{`>`}</span>
-                <br />
-                <span className="text-purple-400 ml-4">{`}`}</span>
-              </span>
-            </pre>
-          </div>
+          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{expContent as string}</ReactMarkdown>
         );
+      case "README.md":
+        return (
+          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{expContent as string}</ReactMarkdown>
+        )
       default:
         break;
     }
     return null;
   };
+
+  
+
 
   return (
     <div className="h-[82dvh] flex bg-bg z-10 flex-col shadow text-gray-400 shadow-shadow border w-full rounded-xl overflow-hidden border-details">
@@ -553,9 +250,9 @@ export default function IDE() {
                 )
             )}
           </div>
-          <code className="w-full overflow-hidden overflow-y-scroll h-[75%] px-5 py-2">
+          <section className="w-full text-sm overflow-hidden overflow-y-scroll h-[75%] px-5 py-2">
             {renderActiveSection()}
-          </code>
+          </section>
           <section className="w-full h-[25%] flex flex-col border-t border-details">
             <div className="w-full text-sm flex border-b border-details justify-between px-8 py-4">
               <div className="flex gap-5">
