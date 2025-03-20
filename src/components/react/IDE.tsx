@@ -223,7 +223,7 @@ export default function IDE() {
 							</div>
 						</div>
 					</div>
-					<div className="flex border-r px-5 w-48 border-details flex-col">
+					<div className="flex border-r px-5 w-52 border-details flex-col">
 						<div className="w-full flex mt-3 justify-between items-center">
 							<p className="pointer-events-none">Portfolio</p>
 							<img src={menudotsIcon.src} alt="menu dots icon" className="w-11 text-sm hover:bg-details px-3 py-1 rounded-md" />
@@ -257,7 +257,7 @@ export default function IDE() {
                             {
                             recentSections.map((section, index) => (
                                 section && (
-                                    <div key={index} className={`${ActiveSection === section ? ' bg-primary text-white' : ''} text-sm items-center hover:text-white flex bg-details rounded-sm px-2 py-1.5 my-1.5 border border-details cursor-pointer transition-all`} onClick={() => setActiveSection(section)}>
+                                    <div key={index} className={`${ActiveSection === section ? ' bg-primary text-white' : ''} text-sm w-32 items-center hover:text-white flex bg-details rounded-sm px-2 py-1.5 my-1.5 border border-details cursor-pointer transition-all`} onClick={() => setActiveSection(section)}>
                                         <p className='pb-0.5'>{section}</p>
                                         {ActiveSection === section && (
                                             <button className='h-full px-2 pb-1.5' onClick={() => removeRecentSection(section)}>x</button>
