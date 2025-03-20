@@ -9,7 +9,7 @@ import menudotsIcon from '../../assets/Icons/menudots.svg'
 import { useState, useEffect, type JSX } from 'react'
 
 export default function IDE() {
-    const [ActiveSection, setActiveSection] = useState('Index.astro');
+    const [ActiveSection, setActiveSection] = useState('About.astro');
     const [recentSections, setRecentSections] = useState<string[]>([]);
 
     useEffect(() => {
@@ -50,7 +50,7 @@ export default function IDE() {
 
     const renderActiveSection = () => {
         switch (ActiveSection) {
-            case 'Index.astro':
+            case 'About.astro':
                 return (
                     <div className="flex flex-col gap-2 text-gray-300">
                         <p className="text-sm font-light">
@@ -84,38 +84,99 @@ export default function IDE() {
                         </p>
                     </div>
                 );
-            case 'Freelance' : 
+            case 'Freelance.json' : 
                 return (
                     <div className="flex flex-col gap-2 text-gray-300">
-                        <p className="text-sm font-light">
-                            <span className='pr-2'>---</span><br /> 
-                                <span className="text-sm"><span className='text-purple-400'>import</span> [JavaScript, TypeScript, ReactJs, Zustand, MongoDB, Axios, Tailwind, ThreeJS, Astro] <span className='text-purple-400'>from</span> 'Web-Development';</span><br />
-                                <span className="text-sm"><span className='text-purple-400'>import</span> [ReactNative, Kotlin, Compose, AndroidStudio] <span className='text-purple-400'>from</span> 'Mobile-Development';</span><br />
-                                <span className="text-sm"><span className='text-purple-400'>import</span> [Sketch, Figma, Framer, WireframeCC] <span className='text-purple-400'>from</span> 'UI/UX-Design';</span><br />
-                                <span className="text-sm"><span className='text-purple-400'>import</span> [Illustrator, Blender, AfterEffects] <span className='text-purple-400'>from</span> 'Dynamic-Web-Graphics';</span><br />
-                            <span className='pr-2'>---</span>
-                        </p>
-                        <p className="text-sm font-light">
-                            <span className='text-primary'><span className='text-gray-500'>{`<`}</span>Layout<span className='text-gray-500'>{`>`}</span></span> <br />
-                            <span className='text-primary ml-4'><span className='text-gray-500'>{`<`}</span>h1<span className='text-gray-500'>{`>`}</span></span> <br />
-                                <span className='ml-10'>Hi!👋, I'm Yeferson Ruzon, Web front-end developer & UI/UX Designer.</span> <br />
-                            <span className='text-primary ml-4'><span className='text-gray-500'>{`</`}</span>h1<span className='text-gray-500'>{`>`}</span></span> <br />
-                            
-                            <span className='text-primary ml-4'><span className='text-gray-500'>{`<`}</span>p<span className='text-gray-500'>{`>`}</span></span> <br />
-                            <span className='ml-10 block'>
-                                I'm a passionate UI/UX Designer & Web Front-End Developer of 21 years old. <br /> 
-                                My focus is on creating digital experiences that are not only visually appealing <br />
-                                but also intuitive and functional. I combine my UI/UX design skills with <br />
-                                a strong background in front-end development to build user interfaces that trul resonate with users.</span> <br />
-                            <span className='ml-10 block'>
-                                My journey has equipped me with a unique blend of design thinking and technical <br />
-                                proficiency, enabling me to bridge the gap between aesthetics and functionality. <br />
-                                Whether it's crafting pixel-perfect designs or writing clean, efficient code, I am committed to <br />
-                                creating digital products that leave a lasting impact.</span>
-                            <span className='text-primary ml-4'><span className='text-gray-500'>{`</`}</span>p<span className='text-gray-500'>{`>`}</span></span>
-                            <br />
-                            <span className='text-primary'><span className='text-gray-500'>{`</`}</span>Layout<span className='text-gray-500'>{`>`}</span></span>
-                        </p>
+                        <pre className="text-sm font-light">
+                            <span className='text-yellow-300'>{`{`}</span>
+                            <ol className="list-none">
+                                <li className='text-purple-400 ml-4'>{`"FreelanceExperience": {`}</li>
+                                <li className='text-[#f1a181] ml-8'>"company": "Freelance",</li>
+                                <li className='text-[#f1a181] ml-8'>"startDate": "2020",</li>
+                                <li className='text-[#f1a181] ml-8'>"endDate": "null",</li>
+                                <li className='text-purple-400 ml-8'>{`"Most-relevant-projects": {`}</li>
+                                    <ol className="list-none ml-12">
+                                        <li className='text-[#f1a181]'>"Solei",</li>
+                                        <li className='text-[#f1a181]'>"Trady",</li>
+                                        <li className='text-[#f1a181]'>"Inverbello",</li>
+                                        <li className='text-[#f1a181]'>"Suvalor",</li>
+                                        <li className='text-[#f1a181]'>"Domus"</li>
+                                    </ol>
+                                <li className='text-purple-400 ml-8'>{`}`}</li>
+                                <li className='text-purple-400 ml-8'>{`"summary": {`}</li>
+                                    <p className='text-[#f1a181] ml-12'>"Desde 2020, he trabajado en proyectos como Hoteles y restaurantes, Páginas interactivas para criptomonedas. <br /> Usé tecnologías como HTML, CSS, JavaScript, TypeScript, React, Next.js y herramientas de diseño como Figma, Wireframe.cc.",</p>
+                                <li className='text-purple-400 ml-8'>{`}`}</li>
+                                <li className='text-purple-400 ml-8'>{`"designTools": {`}</li>
+                                    <ol className="list-none ml-12">
+                                    <li className='text-[#f1a181]'>"Figma",</li>
+                                        <li className='text-[#f1a181]'>"Wireframe.cc",</li>
+                                        <li className='text-[#f1a181]'>"illustrator",</li>
+                                        <li className='text-[#f1a181]'>"Blender",</li>
+                                        <li className='text-[#f1a181]'>"Framer",</li>
+                                    </ol>
+                                <li className='text-purple-400 ml-8'>{`}`}</li>
+                                <li className='text-purple-400 ml-8'>{`"technologies": {`}</li>
+                                    <ol className="list-none ml-12">
+                                        <li className='text-[#f1a181]'>"React",</li>
+                                        <li className='text-[#f1a181]'>"HTML",</li>
+                                        <li className='text-[#f1a181]'>"CSS",</li>
+                                        <li className='text-[#f1a181]'>"Next.js",</li>
+                                        <li className='text-[#f1a181]'>"Tailwind CSS",</li>
+                                        <li className='text-[#f1a181]'>"TypeScript",</li>
+                                        <li className='text-[#f1a181]'>"JavaScript"</li>
+                                    </ol>
+                                <li className='text-purple-400 ml-8'>{`}`}</li>
+                                <li className='text-purple-400 ml-4'>{`}`}</li>
+                            </ol>
+                            <span className='text-yellow-300'>{`}`}</span>
+                        </pre>
+                    </div>
+                );
+            case 'IGD_S.A.S.json' : 
+                return (
+                    <div className="flex flex-col gap-2 text-gray-300">
+                        <pre className="text-sm font-light">
+                            <span className='text-yellow-300'>{`{`}</span>
+                            <ol className="list-none">
+                                <li className='text-purple-400 ml-4'>{`"FreelanceExperience": {`}</li>
+                                <li className='text-[#f1a181] ml-8'>"company": "IGD S.A.S",</li>
+                                <li className='text-[#f1a181] ml-8'>"startDate": "Oct-2022",</li>
+                                <li className='text-[#f1a181] ml-8'>"endDate": "Feb-2025",</li>
+                                <li className='text-purple-400 ml-8'>{`"Most-relevant-projects": {`}</li>
+                                    <ol className="list-none ml-12">
+                                        <li className='text-[#f1a181]'>"SmartCredit",</li>
+                                        <li className='text-[#f1a181]'>"igdsas.com",</li>
+                                        <li className='text-[#f1a181]'>"Finestar",</li>
+                                        <li className='text-[#f1a181]'>"Trady web & software",</li>
+                                    </ol>
+                                <li className='text-purple-400 ml-8'>{`}`}</li>
+                                <li className='text-purple-400 ml-8'>{`"summary": {`}</li>
+                                    <p className='text-[#f1a181] ml-12'>"I have been working as a front-end web developer at I.G.D, a company specialised in software consulting and design. <br /> In this position with a full team, collaborating on various projects and maintaining a high standard. <br /> During my time at the company, I have worked with technologies such as ReactJS, ViteJS, Tailwind, NextJS, <br /> and Zustand, among others. I am also the lead designer for the company, creating interactive web <br /> and mobile designs with Figma and using advanced prototyping techniques."</p>
+                                <li className='text-purple-400 ml-8'>{`}`}</li>
+                                <li className='text-purple-400 ml-8'>{`"designTools": {`}</li>
+                                    <ol className="list-none ml-12">
+                                        <li className='text-[#f1a181]'>"Figma",</li>
+                                        <li className='text-[#f1a181]'>"Wireframe.cc",</li>
+                                        <li className='text-[#f1a181]'>"illustrator",</li>
+                                        <li className='text-[#f1a181]'>"Blender",</li>
+                                        <li className='text-[#f1a181]'>"Framer",</li>
+                                    </ol>
+                                <li className='text-purple-400 ml-8'>{`}`}</li>
+                                <li className='text-purple-400 ml-8'>{`"technologies": {`}</li>
+                                    <ol className="list-none ml-12">
+                                        <li className='text-[#f1a181]'>"React",</li>
+                                        <li className='text-[#f1a181]'>"HTML",</li>
+                                        <li className='text-[#f1a181]'>"CSS",</li>
+                                        <li className='text-[#f1a181]'>"Next.js",</li>
+                                        <li className='text-[#f1a181]'>"Tailwind CSS",</li>
+                                        <li className='text-[#f1a181]'>"TypeScript",</li>
+                                        <li className='text-[#f1a181]'>"JavaScript"</li>
+                                    </ol>
+                                <li className='text-purple-400 ml-8'>{`}`}</li>
+                                <li className='text-purple-400 ml-4'>{`}`}</li>
+                            </ol>
+                            <span className='text-yellow-300'>{`}`}</span>
+                        </pre>
                     </div>
                 );
 
@@ -171,8 +232,8 @@ export default function IDE() {
 							<li className="py-0.5">
 								<div id="exp" className=" transform w-full mr-1.5 hover:text-white cursor-pointer"><p className="inline-block">{'>'} experience</p></div>
 								<ol className="ml-4 " id="expSub">
-									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'Freelance' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('Freelance')}><p>Freelance</p></li>
-									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'IGD S.A.S' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('IGD S.A.S')}><p>IGD S.A.S</p></li>
+									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'Freelance.json' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('Freelance.json')}><p>Freelance.json</p></li>
+									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'IGD_S.A.S.json' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('IGD_S.A.S.json')}><p>IGD_S.A.S.json</p></li>
 								</ol>
 							</li>
 							<li className="py-0.5" >
@@ -182,7 +243,7 @@ export default function IDE() {
 									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'components' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('components')}><p>components</p></li>
 									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'mobile' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('mobile')}><p>mobile</p></li>
 									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'styles' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('styles')}><p>styles</p></li>
-									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'Index.astro' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('Index.astro')}><p>index.astro</p></li>
+									<li className={`py-0.5 hover:text-white cursor-pointer transition-all ${ActiveSection === 'About.astro' ? 'bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary' : ''}`} onClick={() => setActiveSection('About.astro')}><p>About.astro</p></li>
 								</ol>
 							</li>
 							
@@ -206,7 +267,7 @@ export default function IDE() {
                             ))
                             }
                         </div>
-                        <code className='w-full h-[75%] px-5 py-2'>
+                        <code className='w-full overflow-hidden overflow-y-scroll h-[75%] px-5 py-2'>
                             {renderActiveSection()}
                         </code>
                         <section className="w-full h-[25%] flex flex-col border-t border-details">
