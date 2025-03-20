@@ -7,16 +7,15 @@ import categoryIcon from "../../assets/Icons/category.svg";
 import settingIcon from "../../assets/Icons/setting.svg";
 import menudotsIcon from "../../assets/Icons/menudots.svg";
 import { useState, useEffect } from "react";
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from "react-markdown";
 
-import expContent from './IDESections/Exp.md?raw';
-import IGdContent from './IDESections/IGD.md?raw';
-import FreelancerContent from './IDESections/Freelancer.md?raw';
-import AboutContent from './IDESections/About.md?raw';
-
-import rehypeHighlight from 'rehype-highlight';
-// import 'highlight.js/styles/tokyo-night-dark.css';
-import 'highlight.js/styles/atom-one-dark.css';
+import expContent from "./IDESections/Exp.md?raw";
+import IGdContent from "./IDESections/IGD.md?raw";
+import FreelancerContent from "./IDESections/Freelancer.md?raw";
+import AboutContent from "./IDESections/About.md?raw";
+import ReadM from "./IDESections/readM.md?raw";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/atom-one-dark.css";
 
 export default function IDE() {
   const [ActiveSection, setActiveSection] = useState("About.astro");
@@ -63,31 +62,43 @@ export default function IDE() {
     });
   };
 
-
   const renderActiveSection = () => {
     switch (ActiveSection) {
       case "About.astro":
-        return (<ReactMarkdown rehypePlugins={[rehypeHighlight]}>{AboutContent as string}</ReactMarkdown>)
+        return (
+          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
+            {AboutContent as string}
+          </ReactMarkdown>
+        );
       case "Freelance.json":
-        return (<ReactMarkdown rehypePlugins={[rehypeHighlight]}>{FreelancerContent as string}</ReactMarkdown>)
+        return (
+          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
+            {FreelancerContent as string}
+          </ReactMarkdown>
+        );
       case "IGD_S.A.S.json":
-          return (<ReactMarkdown rehypePlugins={[rehypeHighlight]}>{IGdContent as string}</ReactMarkdown>)
+        return (
+          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
+            {IGdContent as string}
+          </ReactMarkdown>
+        );
       case "Exp.tsx":
         return (
-          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{expContent as string}</ReactMarkdown>
+          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
+            {expContent as string}
+          </ReactMarkdown>
         );
       case "README.md":
         return (
-          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{expContent as string}</ReactMarkdown>
-        )
+          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
+            {ReadM as string}
+          </ReactMarkdown>
+        );
       default:
         break;
     }
     return null;
   };
-
-  
-
 
   return (
     <div className="h-[82dvh] flex bg-bg z-10 flex-col shadow text-gray-400 shadow-shadow border w-full rounded-xl overflow-hidden border-details">
@@ -227,7 +238,7 @@ export default function IDE() {
             </li>
           </ul>
         </div>
-        <div className="w-full h-full flex flex-col py-2">
+        <div className="w-full h-[77dvh] flex flex-col py-2">
           <div className="flex gap-3 w-full px-5 border-b pb-2  border-details min-h-10">
             {recentSections.map(
               (section, index) =>
