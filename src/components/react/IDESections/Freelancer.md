@@ -12,8 +12,8 @@
         "Domus"
     }
     "summary": {
-    "Desde 2020, he trabajado en proyectos como Hoteles y restaurantes, Páginas interactivas para criptomonedas. 
-     Usé tecnologías como HTML, CSS, JavaScript, TypeScript, React, Next.js y herramientas de diseño como Figma, Wireframe.cc.",
+        "Desde 2020, he trabajado en proyectos como Hoteles y restaurantes, Páginas interactivas para criptomonedas. 
+        Usé tecnologías como HTML, CSS, JavaScript, TypeScript, React, Next.js y herramientas de diseño como Figma, Wireframe.cc.",
     }
     "designTools": {
         "Figma",

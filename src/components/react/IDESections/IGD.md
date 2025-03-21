@@ -11,11 +11,11 @@
         "Trady web & software",
     }
     "summary": {
-    "I have been working as a front-end web developer at I.G.D, a company specialised in software consulting and design. 
-     In this position with a full team, collaborating on various projects and maintaining a high standard. 
-     During my time at the company, I have worked with technologies such as ReactJS, ViteJS, Tailwind, NextJS, 
-     and Zustand, among others. I am also the lead designer for the company, creating interactive web 
-     and mobile designs with Figma and using advanced prototyping techniques."
+        "I have been working as a front-end web developer at I.G.D, a company specialised in software consulting and design. 
+        In this position with a full team, collaborating on various projects and maintaining a high standard. 
+        During my time at the company, I have worked with technologies such as ReactJS, ViteJS, Tailwind, NextJS, 
+        and Zustand, among others. I am also the lead designer for the company, creating interactive web 
+        and mobile designs with Figma and using advanced prototyping techniques."
     }
     "designTools": {
         "Figma",
