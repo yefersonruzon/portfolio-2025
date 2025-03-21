@@ -18,7 +18,7 @@ export default function Projects() {
             {
                 projects.map((project) => {
                     return (
-                        <div onClick={() => setActive(project.title)} key={project.title} className={`flex group showIDECard h-full flex-col border hover:bg-details cursor-pointer border-details rounded-md overflow-hidden`}>
+                        <div onClick={() => setActive(project.title)} key={project.title} className={`flex group showIDECard1 h-full flex-col border hover:bg-details cursor-pointer border-details rounded-md overflow-hidden`}>
                             <header className=''>
                                 <img src={project.image} alt={project.title} />
                             </header>
