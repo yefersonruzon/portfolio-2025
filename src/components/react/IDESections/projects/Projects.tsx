@@ -24,7 +24,7 @@ export default function Projects() {
                             </header>
                             <div className='px-4 mb-4'>
                                 <h2 className='my-2 text-white'>{project.title}</h2>
-                                <p className='line-clamp-5 group-hover:text-white transition-colors font-light'>{project.description}</p>
+                                <p className='line-clamp-3 group-hover:text-white transition-colors font-light'>{project.description}</p>
                             </div>
                         </div>
                     )
@@ -32,8 +32,8 @@ export default function Projects() {
             }
             {
                 Active && (
-                    <div onClick={handleClose} className={`absolute  inset-0 m-auto w-full h-full overflow-hidden bg-bg-500 flex-col flex items-center`}>
-                        <div className={`w-1/2 rounded-md  group showIDECard mt-[1%] bg-bg border border-details h-fit ${isClosing ? 'closeIDECard' : ''}`}>
+                    <div onClick={handleClose} className={`absolute  inset-0 m-auto w-full h-full overflow-hidden bg-bg-500 backdrop-blur-[1px] flex-col flex justify-center items-center`}>
+                        <div className={`w-1/2 rounded-md group showIDECard bg-bg border border-details h-fit ${isClosing ? 'closeIDECard' : ''}`}>
                             <img src={projects.find((project) => project.title === Active)?.image} alt={Active} className='rounded-md object-cover' />
                             <h2 className=' text-white px-5 pt-3 pb-2'>{Active}</h2>
                             <p className=' group-hover:text-white transition-colors  px-5 pb-6'>{projects.find((project) => project.title === Active)?.description}</p>

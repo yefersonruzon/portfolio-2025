@@ -1,7 +1,6 @@
 import recIcon from "../../assets/Icons/rec.svg";
 import maxIcon from "../../assets/Icons/min.svg";
 import xIcon from "../../assets/Icons/x.svg";
-import categoryIcon from "../../assets/Icons/category.svg";
 import settingIcon from "../../assets/Icons/setting.svg";
 import menudotsIcon from "../../assets/Icons/menudots.svg";
 import { useState, useEffect } from "react";
