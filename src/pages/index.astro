@@ -2,10 +2,33 @@
 import Layout from '../layouts/Layout.astro';
 import mailIcon from '../assets/Icons/mail.svg'
 import IDE from '../components/react/IDE';
+import reactIcon from '../assets/Icons/reactjs-fill.svg';
+import nestIcon from '../assets/Icons/nest.svg';
+import figmaIcon from '../assets/Icons/figma-line.svg';
+import Projects from '../components/react/IDESections/projects/Projects';
+import Logoicon from '../assets/Icons/rz.svg';
+
+function calculateElapsedTime() {
+const startDate = new Date(2022, 9); 
+const currentDate = new Date();
+
+const years = currentDate.getFullYear() - startDate.getFullYear();
+const months = currentDate.getMonth() - startDate.getMonth();
+
+const totalYears = months < 0 ? years - 1 : years;
+const totalMonths = months < 0 ? months + 12 : months;
+
+return { years: totalYears, months: totalMonths };
+}
+
+const elapsedTime = calculateElapsedTime();
+console.log(`Years: ${elapsedTime.years}, Months: ${elapsedTime.months}`);
+
 ---
 
+
 <Layout>
-	<main class="px-28 h-fit relative">
+	<main class="h-fit relative">
 		<svg class="absolute pointer-events-none w-screen left-0 z-0" width="1566" height="1082" viewBox="0 0 1566 1082" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path d="M-305 277.5C-129.833 125.5 270.5 -131.3 470.5 57.5C595.681 175.671 400.142 420.146 154.343 643.409C88.8627 702.886 160.526 834.902 244.048 805.757L501.738 715.834C575.43 690.118 649.883 793.078 633.19 869.322C609.595 977.087 654.491 1071.93 865 1081C1004.83 1078.17 1559 998.3 1565 677.5C1571 356.7 1292.5 260.5 1203.5 234C971.333 172.167 709.4 15.9 1493 -74.5" stroke="#262727"/>
 		</svg>
@@ -19,7 +42,7 @@ import IDE from '../components/react/IDE';
 				<button class="text-sm py-2.5 px-5 bg-primary rounded-full shadow">Contact</button>
 			</div>
 		</section>
-		<section class="flex items-center mb-10 justify-center w-full h-fit">
+		<section class="flex px-28  items-center w-full h-fit">
 			<IDE client:only>
 				<div slot="fallback" class="w-screen h-screen top-0 left-0 fixed z-50 bg-bg flex items-center justify-center">
 					<svg class="animate-spin" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,5 +51,53 @@ import IDE from '../components/react/IDE';
 				</div>
 			</IDE>
 		</section>
+		<section class="h-fit px-28  mb-48 w-full flex-col flex mt-36">
+			
+			<div class="mt-10 grid grid-cols-3 grid-rows-2  gap-5 w-full">
+				<div class="w-full my-auto">
+					<b class="font-light flex items-center "><span class="w-6  rounded-3xl mr-1 h-0.5 bg-white  block"></span>About me</b>
+					<h2 class="text-3xl mb-4">
+						Hi!👋, I'm Yeferson Ruzon, Web front-end developer & UI/UX Designer.
+					</h2>
+					<p class="font-light">Learn more about me and my journey as a self-taught developer and designer how I turned challenges into opportunities, how I combine front-end development with UI/UX design to create seamless digital experiences and the projects where I've brought my ideas to life helping a wide range of companies and people, taking my skills further and further. Let's get in touch and explore how we can create something impactful together.</p>
+				</div>
+				<div class="border border-details pb-5 col-span-2 group h-fit p-5 rounded-lg bg-bg">
+					<img class="w-10 bg-details  rounded-full p-2 " src={Logoicon.src} alt="">
+					<h1 class="mt-2 mb-5 text-lg">About me</h1>
+					<p class=" text-md text font-light group-hover:text-white text-gray-300 transition-colors">I'm Yeferson Ruzon, a 21-year-old self-taught developer and designer whose journey into the world of technology began at 17. What started as a spark of curiosity quickly grew into an unshakable passion, driving me to explore the endless possibilities of coding and design. Despite facing financial barriers that limited my access to formal education, I refused to let circumstances define my future. Instead, I embraced the challenge, turning to self-directed learning, free online resources, and relentless experimentation to build my skills from the ground up.
+						Over time, my initial fascination with programming matured into a dual specialization in front-end development and UI/UX design. This unique combination allows me to bridge the gap between functionality and aesthetics, crafting digital experiences that are not only technically sound but also visually captivating. Every line of code I write and every interface I design reflects my commitment to precision, creativity, and user-centric thinking. Whether I'm building responsive websites or refining intuitive user flows, my goal remains the same: to create seamless, engaging, and impactful solutions that resonate with users and stand the test of time.
+						My journey is a testament to the power of persistence, adaptability, and self-belief—proof that with enough determination, even the steepest learning curves can be conquered.
+					</p>
+				</div>
+				<div class="border border-details pb-5 group p-5 rounded-lg bg-bg">
+					<img class="w-10 bg-details rounded-full p-2 " src={reactIcon.src} alt="">
+					<h1 class="mt-2 text-lg">Front-end</h1>
+					<p class="mt-1 text-md text font-light group-hover:text-white text-gray-300 transition-colors">I'm a Front-End Developer with {elapsedTime.years}.{elapsedTime.months} years of experience building dynamic, user-centric web applications. My work spans corporate websites, startup platforms, SaaS products, loan management systems, and trading software—all crafted with clean, scalable code. Over the years, I've mastered TypeScript, JavaScript (ES6+), ReactJS, Astro, and state management tools like Zustand, along with Axios for seamless API integration. My styling toolkit includes Tailwind CSS, Sass, and pure CSS/HTML, ensuring responsive, visually polished interfaces. Every project reflects my commitment to performance, maintainability, and cutting-edge front-end practices.</p>
+				</div>
+				<div class="border border-details pb-5 group p-5 rounded-lg bg-bg">
+					<img class="w-10 bg-details rounded-full p-2 " src={nestIcon.src} alt="">
+					<h1 class="mt-2 text-lg">Back-end (Exploration)</h1>
+					<p class="mt-1 text-md text font-light group-hover:text-white text-gray-300 transition-colors">While my focus is front-end, I've ventured into back-end development to gain full-stack perspective. I've independently built projects from UI design to deployment, which taught me to structure flexible, database-driven solutions. My back-end toolkit includes NestJS for robust APIs and MongoDB with Mongoose for non-relational data modeling. Though my experience here is limited, these hands-on experiments have sharpened my ability to design cohesive systems—bridging front-end interactivity with efficient server-side logic.</p>
+				</div>
+				<div class="border border-details pb-5 group p-5 rounded-lg bg-bg">
+					<img class="w-10 bg-details rounded-full p-2 " src={figmaIcon.src} alt="">
+					<h1 class="mt-2 text-lg">Diseño</h1>
+					<p class="mt-1 text-md text font-light group-hover:text-white text-gray-300 transition-colors">As a UI/UX Designer, I've spent two years refining interfaces that balance aesthetics and functionality. My work with marketing agencies, SaaS platforms, and mobile apps demanded meticulous attention to detail—from wireframing in Wireframe.cc to high-fidelity prototypes in Figma and Framer. I create custom assets using Illustrator and Blender, ensuring pixel-perfect visuals. Whether streamlining user flows or crafting immersive designs, I prioritize clarity and engagement, always aligning with business goals and technical constraints.</p>
+				</div>
+			</div>
+		</section>
+		<section class="h-screenw-full px-10">
+			<div class="w-full py-5 h-fit  text-center rounded-md">
+				<b class="font-light">Lorem ipsum dolor sit.</b>
+				<h3 class="text-3xl px-72">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolore nihil, sint assumenda natus impedit non placeat minima ratione</h3>
+			</div>
+			<div class="w-full h-fit my-10 px-12">
+				<Projects client:only />
+			</div>
+		</section>
+		<section class="h-screen">
+			
+		</section>
 	</main>
 </Layout>
+

@@ -43,6 +43,10 @@ body {
         background-image: url('../assets/Icons/curve3.svg');
         background-position: 50% 105%;
     }
+    &.about{
+        background-image: url('../assets/Icons/curve2.svg');
+        background-position: 50% 100%;
+    }
   }
   
 .hljs{

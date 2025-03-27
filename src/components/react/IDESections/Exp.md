@@ -22,6 +22,8 @@ const Exp: React.FC<ExpProps> = () => {
     { name: 'Figma', experience: '2.5 years of work experience' },
     { name: 'Next.js', experience: '2.5 years of work experience' },
     { name: 'Astro', experience: '1 year of work experience' },
+    { name: 'Nest', experience: 'No work experience' },
+    { name: 'MongoDb', experience: 'No work experience' },
     { name: 'TreeJS', experience: 'No work experience' },
     { name: 'Framer', experience: 'No work experience' },
     { name: 'Kotlin', experience: 'No work experience' },

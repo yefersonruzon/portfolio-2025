@@ -1,7 +1,6 @@
 import recIcon from "../../assets/Icons/rec.svg";
 import maxIcon from "../../assets/Icons/min.svg";
 import xIcon from "../../assets/Icons/x.svg";
-import settingIcon from "../../assets/Icons/setting.svg";
 import menudotsIcon from "../../assets/Icons/menudots.svg";
 import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
@@ -14,12 +13,12 @@ import ReadM from "./IDESections/readM.md?raw";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css";
 import Projects from "./IDESections/projects/Projects";
-import Search from "./IDESections/Search";
 
 export default function IDE() {
   const [ActiveSection, setActiveSection] = useState("About.astro");
   const [recentSections, setRecentSections] = useState<string[]>([]);
   const [IDEActiveSection, setIDEActiveSection] = useState<string>('Code');
+  const [windowState, setWindowState] = useState<'min' | 'part' | 'max' | 'close'>('max');
 
   useEffect(() => {
     setRecentSections((prevSections) => {
@@ -120,13 +119,20 @@ export default function IDE() {
             Portfolio{ActiveSection ? " - " + ActiveSection : ""}
           </h5>
           <ol className="flex text-white items-center justify-center -my-2 -mr-3 ml-auto">
-            <li className="hover:bg-details w-10 h-10 flex items-center justify-center">
+            <li className="hover:bg-details w-10 h-10 flex items-center justify-center" onClick={() => setWindowState('min')}>
               <img src={recIcon.src} alt="min icon" />
             </li>
-            <li className="hover:bg-details w-10 h-10 flex items-center justify-center">
-              <img src={maxIcon.src} alt="max icon" />
-            </li>
-            <li className="hover:bg-red-700 w-10 h-10 flex items-center justify-center">
+            {
+              windowState === 'part' ?  (
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="11" height="11" rx="1.5" stroke="#C4CBDA"/>
+                </svg>
+              ) :
+              <li className="hover:bg-details w-10 h-10 flex items-center justify-center" onClick={() => setWindowState('part')}>
+                <img src={maxIcon.src} alt="max icon" />
+              </li>
+            }
+            <li className="hover:bg-red-700 w-10 h-10 flex items-center justify-center" onClick={() => setWindowState('close')}>
               <img src={xIcon.src} alt="x icon" />
             </li>
           </ol>
@@ -142,11 +148,6 @@ export default function IDE() {
                   <path d="M23.3333 8.31831C22.8549 8.31831 22.4583 7.92165 22.4583 7.44331V5.83331C22.4583 3.98998 21.6766 3.20831 19.8333 3.20831H9.33325C8.85492 3.20831 8.45825 2.81165 8.45825 2.33331C8.45825 1.85498 8.85492 1.45831 9.33325 1.45831H19.8333C22.6566 1.45831 24.2083 3.00998 24.2083 5.83331V7.44331C24.2083 7.92165 23.8116 8.31831 23.3333 8.31831Z" />
                 </svg>
               </li>
-              <li onClick={()=>setIDEActiveSection('Search')} className={`w-11 text-sm  px-3 py-3 rounded-md ${IDEActiveSection === 'Search' ? 'border bg-primary border-details ' : 'hover:bg-details'}`}>
-                <svg className={`w-[1.2rem] fill-[#9099AC] ${IDEActiveSection === 'Search' && 'fill-white'} `} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8333 4.375C8.16192 4.375 4.375 8.16192 4.375 12.8333C4.375 17.5047 8.16192 21.2917 12.8333 21.2917C17.5047 21.2917 21.2917 17.5047 21.2917 12.8333C21.2917 8.16192 17.5047 4.375 12.8333 4.375ZM2.625 12.8333C2.625 7.19543 7.19543 2.625 12.8333 2.625C18.4712 2.625 23.0417 7.19543 23.0417 12.8333C23.0417 15.3373 22.1402 17.6306 20.644 19.4066L25.1187 23.8813C25.4604 24.223 25.4604 24.777 25.1187 25.1187C24.777 25.4604 24.223 25.4604 23.8813 25.1187L19.4066 20.644C17.6306 22.1402 15.3373 23.0417 12.8333 23.0417C7.19543 23.0417 2.625 18.4712 2.625 12.8333Z"/>
-                </svg>
-              </li>
               <li onClick={()=>setIDEActiveSection('designs')} className={`w-11 text-sm px-3 py-3 rounded-md ${IDEActiveSection === 'designs' ? 'border bg-primary border-details' : 'hover:bg-details'}`}>
                 <svg className={`w-[1.2rem] stroke-[#9099AC] ${IDEActiveSection === 'designs' && 'stroke-white'} `} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M19.8333 11.6666H22.1666C24.4999 11.6666 25.6666 10.5 25.6666 8.16665V5.83331C25.6666 3.49998 24.4999 2.33331 22.1666 2.33331H19.8333C17.4999 2.33331 16.3333 3.49998 16.3333 5.83331V8.16665C16.3333 10.5 17.4999 11.6666 19.8333 11.6666Z"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -156,13 +157,6 @@ export default function IDE() {
                 </svg>
               </li>
             </ul>
-            <div className="flex items-center justify-center w-full">
-              <img
-                src={settingIcon.src}
-                alt="setting icon"
-                className="w-11 text-sm hover:bg-details px-3 py-3 rounded-md"
-              />
-            </div>
           </div>
         </div>
         <div className={`flex border-r  border-details flex-col overflow-hidden transition-discrete transition-all gap-1 ${IDEActiveSection === 'Code' ? 'w-52  px-5' : 'w-0 px-0'}`}>
@@ -274,9 +268,6 @@ export default function IDE() {
           <section className={`w-full text-sm overflow-hidden overflow-y-scroll h-[75%] px-5 py-2 ${IDEActiveSection === 'Code' ? 'h-[75%]' : 'h-full'}`}>
             {
               IDEActiveSection === 'Code' && renderActiveSection()
-            }
-            {
-              IDEActiveSection === 'Search' && <Search />
             }
             {
               IDEActiveSection === 'designs' && <Projects />

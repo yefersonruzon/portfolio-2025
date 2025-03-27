@@ -19,7 +19,7 @@ export default function Projects() {
                 projects.map((project) => {
                     return (
                         <div onClick={() => setActive(project.title)} key={project.title} className={`flex group showIDECard1 h-full flex-col border hover:bg-details cursor-pointer border-details rounded-md overflow-hidden`}>
-                            <header className=''>
+                            <header className='w-[95%] h-fit overflow-hidden relative mt-2 mb-2 rounded-sm mx-auto border border-details'>
                                 <img src={project.image} alt={project.title} />
                             </header>
                             <div className='px-4 mb-4'>
@@ -34,7 +34,9 @@ export default function Projects() {
                 Active && (
                     <div onClick={handleClose} className={`absolute  inset-0 m-auto w-full h-full overflow-hidden bg-bg-500 backdrop-blur-[1px] flex-col flex justify-center items-center`}>
                         <div className={`w-1/2 rounded-md group showIDECard bg-bg border border-details h-fit ${isClosing ? 'closeIDECard' : ''}`}>
-                            <img src={projects.find((project) => project.title === Active)?.image} alt={Active} className='rounded-md object-cover' />
+                            <div className=''>
+                                <img src={projects.find((project) => project.title === Active)?.image} alt={Active} className='rounded-md object-cover' />
+                            </div>
                             <h2 className=' text-white px-5 pt-3 pb-2'>{Active}</h2>
                             <p className=' group-hover:text-white transition-colors  px-5 pb-6'>{projects.find((project) => project.title === Active)?.description}</p>
                         </div>
