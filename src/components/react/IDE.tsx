@@ -14,6 +14,7 @@ import ReadM from "./IDESections/readM.md?raw";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css";
 import Projects from "./IDESections/projects/Projects";
+import Search from "./IDESections/Search";
 
 export default function IDE() {
   const [ActiveSection, setActiveSection] = useState("About.astro");
@@ -275,13 +276,13 @@ export default function IDE() {
               IDEActiveSection === 'Code' && renderActiveSection()
             }
             {
-              IDEActiveSection === 'search' && 'search'
+              IDEActiveSection === 'Search' && <Search />
             }
             {
               IDEActiveSection === 'designs' && <Projects />
             }
           </section>
-          <section className={`w-full text-sm overflow-hidden overflow-y-scroll transition-all px-5 py-2 pt-0  border border-t border-details ${IDEActiveSection === 'Code' ? 'h-[25%]' : 'h-0'}`}>
+          <section className={`w-full text-sm overflow-hidden overflow-y-scroll transition-all px-5  pt-0  border border-t border-details ${IDEActiveSection === 'Code' ? 'h-[25%] py-2' : 'h-0 py-0'}`}>
             <div className="w-full text-sm flex border-b border-details justify-between px-8 py-4">
               <div className="flex gap-5">
                 <p className="relative after:absolute after:w-1/2 after:h-0.5 after:bg-text-details flex items-center justify-center after:-bottom-0.5 after:rounded-md">

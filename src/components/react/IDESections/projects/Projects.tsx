@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import projects from '../../../../projects.json'
+import projects from './projects.json'
 
 export default function Projects() {
     const [Active, setActive] = useState('');
