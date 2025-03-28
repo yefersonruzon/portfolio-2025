@@ -49,6 +49,14 @@ body {
     }
   }
   
+.footer{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: visible;
+    background-image: url('../assets/Icons/bgfooter.svg');
+    background-position: 50% 10%;
+}
+
 .hljs{
     background: var(--color-bg) !important;
     margin-left:-10px;

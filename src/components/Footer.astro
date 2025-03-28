@@ -1,0 +1,42 @@
+---
+import Logo from '../assets/RZ.svg'
+import Github from '../assets/Icons/Github.svg'
+import Dribbble from '../assets/Icons/Dribbble.svg'
+import Linkedin from '../assets/Icons/Linkedin.svg'
+---
+
+<footer class="w-full border-t border-details  pt-9 footer">
+    <div class="flex flex-col gap-5 px-9">
+        <div class="flex gap-4 items-center">
+            <img src={Logo.src} alt="Logo" class="w-7" />
+            <p>Yeferson ruzon, 2025.</p>
+        </div>
+    </div>
+    <div class="flex justify-between px-9">
+        <div class="w-full flex gap-5 justify-between">
+            <ul class="flex flex-7/12 flex-col gap-1 mt-4 font-light">
+                <li class="text-gray-200 hover:text-white"><a href="mailto:yefersonruzon@gmail.com">yefersonruzon@gmail.com</a></li>
+                <li class="text-gray-200 hover:text-white">+57 3153509891</li>
+            </ul>
+            <ul class="flex-1/12">
+                <li class="text-gray-400 hover:text-white transition-colors"><a href="#">home</a></li>
+                <li class="text-gray-400 hover:text-white transition-colors"><a href="#">About me</a></li>
+                <li class="text-gray-400 hover:text-white transition-colors"><a href="#">Portfolio</a></li>
+                <li class="text-gray-400 hover:text-white transition-colors"><a href="#">Contact</a></li>
+                <li class="text-gray-400 hover:text-white transition-colors"><a href="#">Download CV</a></li>
+            </ul>
+            <div class="flex-1/12">
+                <h5>Follow me!</h5>
+                <ul class="flex mt-3 mb-4 gap-5">
+                    <li><a href="#" class="bg-details p-3 rounded-full group hover:bg-primary cursor-pointer w-fit h-fit block"><img src={Github.src} class="w-5" alt="github logo"></a></li>
+                    <li><a href="#" class="bg-details p-3 rounded-full group hover:bg-primary cursor-pointer w-fit h-fit block"><img src={Dribbble.src} class="w-5" alt="Dribbble logo"></a></li>
+                    <li><a href="#" class="bg-details p-3 rounded-full group hover:bg-primary cursor-pointer w-fit h-fit block"><img src={Linkedin.src} class="w-5" alt="Linkedin logo"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="mt-20 border-t  border-details bg-bg">
+        <p class="text-gray-400 text-center font-light py-10">© 2025 Yeferson Ruzon. All rights reserved.</p>
+    </div>
+</footer>
+

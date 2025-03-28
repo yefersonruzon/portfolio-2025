@@ -7,6 +7,7 @@ import nestIcon from '../assets/Icons/nest.svg';
 import figmaIcon from '../assets/Icons/figma-line.svg';
 import Projects from '../components/react/IDESections/projects/Projects';
 import Logoicon from '../assets/Icons/rz.svg';
+import Footer from '../components/Footer.astro';
 
 function calculateElapsedTime() {
 const startDate = new Date(2022, 9); 
@@ -28,8 +29,41 @@ const elapsedTime = calculateElapsedTime();
 
 <Layout>
 	<main class="h-fit relative">
-		<svg class="absolute pointer-events-none w-screen left-0 z-0" width="1566" height="1082" viewBox="0 0 1566 1082" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M-305 277.5C-129.833 125.5 270.5 -131.3 470.5 57.5C595.681 175.671 400.142 420.146 154.343 643.409C88.8627 702.886 160.526 834.902 244.048 805.757L501.738 715.834C575.43 690.118 649.883 793.078 633.19 869.322C609.595 977.087 654.491 1071.93 865 1081C1004.83 1078.17 1559 998.3 1565 677.5C1571 356.7 1292.5 260.5 1203.5 234C971.333 172.167 709.4 15.9 1493 -74.5" stroke="#262727"/>
+		<svg class="absolute pointer-events-none w-screen left-0 z-0 animate-[float_8s_ease-in-out_infinite]" width="1566" height="1082" viewBox="0 0 1566 1082" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path stroke="#262727" stroke-width="2">
+				<animate 
+				  attributeName="d" 
+				  dur="50s"
+				  repeatCount="indefinite"
+				  values="
+					M-405 277.5C-229.833 125.5 270.5 -131.3 470.5 57.5C595.681 175.671 400.142 420.146 154.343 643.409C88.8627 702.886 160.526 834.902 244.048 805.757L501.738 715.834C575.43 690.118 649.883 793.078 633.19 869.322C609.595 977.087 654.491 1051.93 865 1061C1004.83 1058.17 1659 998.3 1665 677.5C1671 356.7 1292.5 260.5 1203.5 234C971.333 172.167 709.4 15.9 1593 -74.5;
+					M-505 227.5C-329.833 95.5 170.5 -161.3 370.5 27.5C495.681 145.671 
+					300.142 380.146 54.343 603.409C-11.1373 662.886 
+					60.526 794.902 144.048 765.757L401.738 675.834C475.43 650.118 
+					549.883 753.078 533.19 829.322C509.595 937.087 654.491 1011.93 965 1021C1104.83 1018.17 
+					1759 958.3 1765 637.5C1771 316.7 1392.5 220.5 1303.5 194C1071.33 132.167 809.4 -24.1 1693 -114.5;
+					M-455 307.5C-279.833 155.5 220.5 -101.3 420.5 87.5C545.681 205.671 
+					350.142 460.146 104.343 683.409C38.8627 742.886 
+					110.526 874.902 194.048 845.757L451.738 755.834C525.43 730.118 
+					599.883 833.078 583.19 909.322C559.595 1017.09 704.491 1091.93 915 1101C1054.83 1098.17 
+					1709 1038.3 1715 717.5C1721 396.7 1342.5 300.5 1253.5 274C1021.33 212.167 759.4 55.9 1643 -34.5;
+					
+					M-555 197.5C-379.833 45.5 120.5 -181.3 320.5 7.5C445.681 125.671 
+					250.142 400.146 4.343 623.409C-61.1373 682.886 
+					10.526 814.902 94.048 785.757L351.738 695.834C425.43 670.118 
+					499.883 773.078 483.19 849.322C459.595 957.087 604.491 1031.93 815 1041C954.83 1038.17 
+					1609 978.3 1615 657.5C1621 336.7 1242.5 240.5 1153.5 214C921.333 152.167 659.4 -4.1 1543 -94.5;
+					
+					M-405 277.5C-229.833 125.5 270.5 -131.3 470.5 57.5C595.681 175.671 400.142 420.146 154.343 643.409C88.8627 702.886 160.526 834.902 244.048 805.757L501.738 715.834C575.43 690.118 649.883 793.078 633.19 869.322C609.595 977.087 654.491 1051.93 865 1061C1004.83 1058.17 1659 998.3 1665 677.5C1671 356.7 1292.5 260.5 1203.5 234C971.333 172.167 709.4 15.9 1593 -74.5"
+				  
+				  calcMode="spline"
+				  keyTimes="0; 0.25; 0.5; 0.75; 1"
+				  keySplines="0.45 0 0.55 1; 
+							 0.4 0.1 0.6 0.9; 
+							 0.35 0.1 0.65 0.9;
+							 0.3 0 0.7 1"
+				/>
+			  </path>
 		</svg>
 		<section class="min-h-[72dvh] h-fit text-center w-full flex items-center flex-col gap-3 justify-center">
 			<b class="font-light mt-20 text-sm border border-details px-7 py-1.5 rounded-full">Yeferson Ruzon</b>
@@ -50,76 +84,84 @@ const elapsedTime = calculateElapsedTime();
 				</div>
 			</IDE>
 		</section>
-		<section class="h-fit px-28  mb-48 w-full flex-col flex mt-28">
-			<div class="w-full">
-				<!-- <b class="font-light flex items-center "><span class="w-6  rounded-3xl mr-1 h-0.5 bg-white  block"></span>About me</b> -->
-				<b class="font-light text-sm border border-details px-7 py-1.5 rounded-full">About me</b>
-				<h2 class="text-3xl mb-4 max-w-xl mt-5 font-medium">
-					Hi!👋, I'm Yeferson Ruzon, Web front-end developer & UI/UX Designer.
-				</h2>
-			</div>
-			<div class="border border-details pb-5 col-span-3 mt-8 group h-fit p-5 rounded-lg bg-bg">
-				<img class="w-10 bg-details  rounded-full p-2 " src={Logoicon.src} alt="">
-				<h1 class="mt-2 mb-5 text-lg">About me</h1>
-				<p class=" text-md text font-light group-hover:text-white text-gray-300 transition-colors">I'm Yeferson Ruzon, a 21 year old self-taught developer and designer whose journey into the world of technology began at the age of 17. What started as a spark of curiosity quickly turned into an unwavering passion that led me to explore the endless possibilities of programming and design. Despite the economic barriers that limited my access to formal education, I refused to let circumstances define my future. Instead, I embraced the challenge and turned to self-directed learning, free online resources, and relentless experimentation to develop my skills from the ground up. Over time, my initial fascination with programming matured into a dual specialization in front-end development and UI/UX design. This unique combination allows me to bridge the gap between functionality and aesthetics, creating digital experiences that are not only technically sound, but also visually captivating. Every line of code I write and every interface I design reflects my commitment to precision, creativity, and user-centered thinking.</p>
-			</div>
-			<div class="mt-5 flex gap-5 w-full">
-				<div class="border border-details pb-5 group p-5 rounded-lg bg-bg">
-					<img class="w-10 bg-details rounded-full p-2 " src={reactIcon.src} alt="">
-					<h1 class="mt-2 text-lg">Front-end</h1>
-					<p class="mt-1 text-md text font-light group-hover:text-white text-gray-300 transition-colors">I'm a Front-End Developer with {elapsedTime.years}.{elapsedTime.months} years of experience building dynamic, user-centric web applications. My work spans corporate websites, startup platforms, SaaS products, loan management systems, and trading software—all crafted with clean, scalable code. Over the years, I've mastered TypeScript, JavaScript (ES6+), ReactJS, Astro, and state management tools like Zustand, along with Axios for seamless API integration. My styling toolkit includes Tailwind CSS, Sass, and pure CSS/HTML, ensuring responsive, visually polished interfaces. Every project reflects my commitment to performance, maintainability, and cutting-edge front-end practices.</p>
+		<div class="relative h-fit">
+			<svg class="absolute w-screen h-full -top-96 z-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1728 2691">
+				<path stroke="#262727" d="M746.5 257.584C503.167 372.636-81.6 831.839-2 1250.1c99.5 522.83 1076.55 166.96 1398 220.09 367 60.65 752.95 209.34 730.5 677.96-10.98 229.29-801.65-276.08-1380-151.38-422.217 91.04-505.46 916.38-1207 636.63"/>
+				<path stroke="#262727" d="M1113.77 1c243.34 115.051 710.1 449.72 630.5 867.984-71.1 373.606-704.77 160.866-1138.473 294.696-250.5 77.3-707.445 258.73-685 727.35 19 396.68 896.203 931.86 2202.203 78.9"/>
+			</svg>
+
+			<section class="h-fit px-28  mb-48 w-full relative flex-col flex mt-28">
+				<div class="w-full relative z-10">
+					<!-- <b class="font-light flex items-center "><span class="w-6  rounded-3xl mr-1 h-0.5 bg-white  block"></span>About me</b> -->
+					<b class="font-light text-sm border border-details px-7 py-1.5 rounded-full">About me</b>
+					<h2 class="text-3xl mb-4 max-w-xl mt-5 font-medium">
+						Hi!👋, I'm Yeferson Ruzon, Web front-end developer & UI/UX Designer.
+					</h2>
 				</div>
-				<div class="border border-details pb-5 group p-5 rounded-lg bg-bg">
-					<img class="w-10 bg-details rounded-full p-2 " src={nestIcon.src} alt="">
-					<h1 class="mt-2 text-lg">Back-end (Exploration)</h1>
-					<p class="mt-1 text-md text font-light group-hover:text-white text-gray-300 transition-colors">While my focus is front-end, I've ventured into back-end development to gain full-stack perspective. I've independently built projects from UI design to deployment, which taught me to structure flexible, database-driven solutions. My back-end toolkit includes NestJS for robust APIs and MongoDB with Mongoose for non-relational data modeling. Though my experience here is limited, these hands-on experiments have sharpened my ability to design cohesive systems—bridging front-end interactivity with efficient server-side logic.</p>
+				<div class="border relative z-10 border-details pb-5 col-span-3 mt-8 group h-fit p-5 rounded-lg bg-bg">
+					<img class="w-10 bg-details  rounded-full p-2 " src={Logoicon.src} alt="">
+					<h1 class="mt-2 mb-1 text-lg">About me</h1>
+					<p class=" text-md text font-light group-hover:text-white text-gray-300 transition-colors">I'm Yeferson Ruzon, a 21 year old self-taught developer and designer whose journey into the world of technology began at the age of 17. What started as a spark of curiosity quickly turned into an unwavering passion that led me to explore the endless possibilities of programming and design. Despite the economic barriers that limited my access to formal education, I refused to let circumstances define my future. Instead, I embraced the challenge and turned to self-directed learning, free online resources, and relentless experimentation to develop my skills from the ground up. Over time, my initial fascination with programming matured into a dual specialization in front-end development and UI/UX design. This unique combination allows me to bridge the gap between functionality and aesthetics, creating digital experiences that are not only technically sound, but also visually captivating. Every line of code I write and every interface I design reflects my commitment to precision, creativity, and user-centered thinking.</p>
 				</div>
-				<div class="border border-details pb-5 group p-5 rounded-lg bg-bg">
-					<img class="w-10 bg-details rounded-full p-2 " src={figmaIcon.src} alt="">
-					<h1 class="mt-2 text-lg">Diseño</h1>
-					<p class="mt-1 text-md text font-light group-hover:text-white text-gray-300 transition-colors">As a UI/UX Designer, I've spent two years refining interfaces that balance aesthetics and functionality. My work with marketing agencies, SaaS platforms, and mobile apps demanded meticulous attention to detail—from wireframing in Wireframe.cc to high-fidelity prototypes in Figma and Framer. I create custom assets using Illustrator and Blender, ensuring pixel-perfect visuals. Whether streamlining user flows or crafting immersive designs, I prioritize clarity and engagement, always aligning with business goals and technical constraints.</p>
-				</div>
-			</div>
-		</section>
-		<section class="h-screenw-full px-10">
-			<div class="w-full py-5 h-fit  text-center rounded-md">
-				<b class="font-light mt-20 text-sm border border-details px-7 py-1.5 rounded-full">Projects</b>
-				<h3 class="text-4xl max-w-md mx-auto mt-3 font-medium">Front-End Dev & <span class="relative"><b class="relative font-medium bgimage">UI/UX</b></span> Design Portfolio</h3>
-			</div>
-			<div class="w-full h-fit my-10 px-12">
-				<Projects client:only />
-			</div>
-		</section>
-		<section class="h-fit px-20 py-20">
-			<b class="font-light mt-20 text-sm border border-details px-7 py-1.5 rounded-full">Contact</b>
-			<h1 class="text-3xl mb-4 max-w-xl mt-5 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, hic.</h1>
-			<form action="" class="flex flex-col gap-3">
-				<div class="flex gap-7 w-full">
-					<div class="flex flex-col w-full gap-2">
-						<label for="name" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Name</label>
-						<input type="text" name="name" placeholder="jhon doe" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
+				<div class="mt-5 relative z-10 flex gap-5 w-full">
+					<div class="border border-details pb-5 group p-5 rounded-lg bg-bg">
+						<img class="w-10 bg-details rounded-full p-2 " src={reactIcon.src} alt="">
+						<h1 class="mt-2 text-lg">Front-end</h1>
+						<p class="mt-1 text-md text font-light group-hover:text-white text-gray-300 transition-colors">I'm a Front-End Developer with {elapsedTime.years}.{elapsedTime.months} years of experience building dynamic, user-centric web applications. My work spans corporate websites, startup platforms, SaaS products, loan management systems, and trading software—all crafted with clean, scalable code. Over the years, I've mastered TypeScript, JavaScript (ES6+), ReactJS, Astro, and state management tools like Zustand, along with Axios for seamless API integration. My styling toolkit includes Tailwind CSS, Sass, and pure CSS/HTML, ensuring responsive, visually polished interfaces. Every project reflects my commitment to performance, maintainability, and cutting-edge front-end practices.</p>
 					</div>
-					<div class="flex flex-col w-full gap-2">
-						<label for="name" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Last name</label>
-						<input type="text" name="name" placeholder="jhon doe" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
+					<div class="border border-details pb-5 group p-5 rounded-lg bg-bg">
+						<img class="w-10 bg-details rounded-full p-2 " src={nestIcon.src} alt="">
+						<h1 class="mt-2 text-lg">Back-end (Exploration)</h1>
+						<p class="mt-1 text-md text font-light group-hover:text-white text-gray-300 transition-colors">While my focus is front-end, I've ventured into back-end development to gain full-stack perspective. I've independently built projects from UI design to deployment, which taught me to structure flexible, database-driven solutions. My back-end toolkit includes NestJS for robust APIs and MongoDB with Mongoose for non-relational data modeling. Though my experience here is limited, these hands-on experiments have sharpened my ability to design cohesive systems—bridging front-end interactivity with efficient server-side logic.</p>
+					</div>
+					<div class="border border-details pb-5 group p-5 rounded-lg bg-bg">
+						<img class="w-10 bg-details rounded-full p-2 " src={figmaIcon.src} alt="">
+						<h1 class="mt-2 text-lg">Diseño</h1>
+						<p class="mt-1 text-md text font-light group-hover:text-white text-gray-300 transition-colors">As a UI/UX Designer, I've spent two years refining interfaces that balance aesthetics and functionality. My work with marketing agencies, SaaS platforms, and mobile apps demanded meticulous attention to detail—from wireframing in Wireframe.cc to high-fidelity prototypes in Figma and Framer. I create custom assets using Illustrator and Blender, ensuring pixel-perfect visuals. Whether streamlining user flows or crafting immersive designs, I prioritize clarity and engagement, always aligning with business goals and technical constraints.</p>
 					</div>
 				</div>
-				<div class="flex gap-7 w-full">
-					<div class="flex flex-col w-full gap-2">
-						<label for="name" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>company name</label>
-						<input type="text" name="name" placeholder="jhon doe" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
-					</div>
-					<div class="flex flex-col w-full gap-2">
-						<label for="name" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Email</label>
-						<input type="text" name="name" placeholder="jhon doe" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
-					</div>
+			</section>
+			<section class="h-screenw-full relative z-10 px-10">
+				<div class="w-full py-5 h-fit  text-center rounded-md">
+					<b class="font-light mt-20 text-sm border border-details px-7 py-1.5 rounded-full">Projects</b>
+					<h3 class="text-4xl max-w-md mx-auto mt-3 font-medium">Front-End Dev & <span class="relative"><b class="relative font-medium bgimage">UI/UX</b></span> Design Portfolio</h3>
 				</div>
-				<div class="flex flex-col gap-2">
-					<label for="name" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>contact reason</label>
-					<textarea name="name" placeholder="jhon doe" class="border resize-none border-details focus:outline-none bg-bg rounded-md px-5 py-2 h-32"></textarea>
+				<div class="w-full h-fit my-10 px-12">
+					<Projects client:only />
 				</div>
-			</form>
-		</section>
+			</section>
+			<section class="h-fit px-20 relative z-10 py-20 mb-20">
+				<b class="font-light mt-20 text-sm border border-details px-7 py-1.5 rounded-full">Contact</b>
+				<h1 class="text-3xl mb-4 max-w-xl mt-5 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, hic.</h1>
+				<form action="" class="flex flex-col gap-3">
+					<div class="flex gap-7 w-full">
+						<div class="flex flex-col w-full gap-1">
+							<label for="name" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>First name</label>
+							<input type="text" name="name" placeholder="First name" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
+						</div>
+						<div class="flex flex-col w-full gap-1">
+							<label for="lastName" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Last name</label>
+							<input type="text" name="lastName" placeholder="Last name" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
+						</div>
+					</div>
+					<div class="flex gap-7 w-full">
+						<div class="flex flex-col w-full gap-1">
+							<label for="company" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Company name</label>
+							<input type="text" name="company" placeholder="Company name" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
+						</div>
+						<div class="flex flex-col w-full gap-1">
+							<label for="email" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Email</label>
+							<input type="email" name="email" placeholder="example@mail.com" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
+						</div>
+					</div>
+					<div class="flex flex-col gap-1">
+						<label for="reason" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Contact reason</label>
+						<textarea name="reason" placeholder="Contact reason" class="border resize-none border-details focus:outline-none bg-bg rounded-md px-5 py-2 h-32"></textarea>
+					</div>
+				</form>
+			</section>
+		</div>
 	</main>
+	<Footer />
 </Layout>
 
