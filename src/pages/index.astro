@@ -65,7 +65,7 @@ const elapsedTime = calculateElapsedTime();
 				/>
 			  </path>
 		</svg>
-		<section class="min-h-[72dvh] h-fit text-center w-full flex items-center flex-col gap-3 justify-center">
+		<section id="home" class="min-h-[72dvh] h-fit text-center w-full flex items-center flex-col gap-3 justify-center">
 			<b class="font-light mt-20 text-sm border border-details px-7 py-1.5 rounded-full">Yeferson Ruzon</b>
 			<h1 class="text-7xl font-montserrat font-semibold">Creative <span class="relative"><b class="relative font-semibold bgimage">UI/UX</b></span> <br> Designer & Web <br> Front<span class="text-primary">-</span>End Dev<span class="text-primary">.</span></h1>
 			<p class="max-w-fit text-sm text-text-details">Hi, I'm Yeferson Ruzon, a passionate UI/UX Designer & Web Front-End <br> Developer of 21 years old. My focus is on creating digital experiences that are not <br> only visually appealing, but also intuitive and functional. I combine <br> my UI/UX design skills with a strong background in front-end development <br> to build user interfaces.</p>
@@ -116,10 +116,9 @@ const elapsedTime = calculateElapsedTime();
 				</path>
 			</svg>
 
-			<section class="h-fit px-28  mb-48 w-full relative flex-col flex mt-28">
+			<section  id="about" class="h-fit px-28  mb-48 w-full relative flex-col flex mt-28">
 				<div class="w-full relative z-10">
-					<!-- <b class="font-light flex items-center "><span class="w-6  rounded-3xl mr-1 h-0.5 bg-white  block"></span>About me</b> -->
-					<b class="font-light text-sm border border-details px-7 py-1.5 rounded-full">About me</b>
+					<b class="font-light text-sm border border-details bg-bg px-7 py-1.5 rounded-full">About me</b>
 					<h2 class="text-3xl mb-4 max-w-xl mt-5 font-medium">
 						Hi!👋, I'm Yeferson Ruzon, Web front-end developer & UI/UX Designer.
 					</h2>
@@ -147,16 +146,16 @@ const elapsedTime = calculateElapsedTime();
 					</div>
 				</div>
 			</section>
-			<section class="h-screenw-full relative z-10 px-10">
+			<section id="portfolio" class="h-screen w-full relative z-10 px-10">
 				<div class="w-full py-5 h-fit  text-center rounded-md">
-					<b class="font-light mt-20 text-sm border border-details px-7 py-1.5 rounded-full">Projects</b>
+					<b class="font-light mt-20 text-sm border bg-bg border-details px-7 py-1.5 rounded-full">Projects</b>
 					<h3 class="text-4xl max-w-md mx-auto mt-3 font-medium">Front-End Dev & <span class="relative"><b class="relative font-medium bgimage">UI/UX</b></span> Design Portfolio</h3>
 				</div>
 				<div class="w-full h-fit my-10 px-12">
 					<Projects client:only />
 				</div>
 			</section>
-			<section class="h-fit px-20 relative z-10 py-20 mb-20">
+			<section  id="contact" class="h-fit px-20 relative z-10 py-20 mb-20">
 				<b class="font-light mt-20 text-sm border border-details px-7 py-1.5 rounded-full">Contact</b>
 				<h1 class="text-3xl mb-4 max-w-xl mt-5 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, hic.</h1>
 				<form action="" class="flex flex-col gap-3">
@@ -180,7 +179,7 @@ const elapsedTime = calculateElapsedTime();
 							<input type="email" name="email" placeholder="example@mail.com" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
 						</div>
 					</div>
-					<div class="flex flex-col gap-1">
+					<div  class="flex flex-col gap-1">
 						<label for="reason" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Contact reason</label>
 						<textarea name="reason" placeholder="Contact reason" class="border resize-none border-details focus:outline-none bg-bg rounded-md px-5 py-2 h-32"></textarea>
 					</div>

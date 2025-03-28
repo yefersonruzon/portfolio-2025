@@ -5,7 +5,7 @@ import Dribbble from '../assets/Icons/dribbble.svg'
 import Linkedin from '../assets/Icons/linkedin.svg'
 ---
 
-<footer class="w-full border-t border-details  pt-9 footer">
+<footer  class="w-full border-t border-details  pt-9 footer">
     <div class="flex flex-col gap-5 px-9">
         <div class="flex gap-4 items-center">
             <img src={Logo.src} alt="Logo" class="w-7" />
@@ -19,18 +19,30 @@ import Linkedin from '../assets/Icons/linkedin.svg'
                 <li class="text-gray-200 hover:text-white">+57 3153509891</li>
             </ul>
             <ul class="flex-1/12">
-                <li class="text-gray-400 hover:text-white transition-colors"><a href="#">home</a></li>
-                <li class="text-gray-400 hover:text-white transition-colors"><a href="#">About me</a></li>
-                <li class="text-gray-400 hover:text-white transition-colors"><a href="#">Portfolio</a></li>
-                <li class="text-gray-400 hover:text-white transition-colors"><a href="#">Contact</a></li>
-                <li class="text-gray-400 hover:text-white transition-colors"><a href="#">Download CV</a></li>
+                <li class="text-gray-400 hover:text-white transition-colors">
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+                <li class="text-gray-400 hover:text-white transition-colors">
+                    <a href="#about">About me</a>
+                </li>
+                <li class="text-gray-400 hover:text-white transition-colors">
+                    <a href="#portfolio">Portfolio</a>
+                </li>
+                <li class="text-gray-400 hover:text-white transition-colors">
+                    <a href="#contact">Contact</a>
+                </li>
+                <li class="text-gray-400 hover:text-white transition-colors">
+                    <a href="#cv">Download CV</a>
+                </li>
             </ul>
             <div class="flex-1/12">
                 <h5>Follow me!</h5>
                 <ul class="flex mt-3 mb-4 gap-5">
-                    <li><a href="#" class="bg-details p-3 rounded-full group hover:bg-primary cursor-pointer w-fit h-fit block"><img src={Github.src} class="w-5" alt="github logo"></a></li>
-                    <li><a href="#" class="bg-details p-3 rounded-full group hover:bg-primary cursor-pointer w-fit h-fit block"><img src={Dribbble.src} class="w-5" alt="Dribbble logo"></a></li>
-                    <li><a href="#" class="bg-details p-3 rounded-full group hover:bg-primary cursor-pointer w-fit h-fit block"><img src={Linkedin.src} class="w-5" alt="Linkedin logo"></a></li>
+                    <li><a target="_blank" href="https://github.com/yefersonruzon" class="bg-details p-3 rounded-full group hover:bg-primary cursor-pointer w-fit h-fit block"><img src={Github.src} class="w-5" alt="github logo"></a></li>
+                    <li><a target="_blank" href="https://dribbble.com/YefersonRuzon" class="bg-details p-3 rounded-full group hover:bg-primary cursor-pointer w-fit h-fit block"><img src={Dribbble.src} class="w-5" alt="Dribbble logo"></a></li>
+                    <li><a target="_blank" href="https://www.linkedin.com/in/yefersonruzon/" class="bg-details p-3 rounded-full group hover:bg-primary cursor-pointer w-fit h-fit block"><img src={Linkedin.src} class="w-5" alt="Linkedin logo"></a></li>
                 </ul>
             </div>
         </div>

@@ -42,6 +42,8 @@ body {
     &.nav{
         background-image: url('../assets/Icons/curve3.svg');
         background-position: 50% 105%;
+        background-size: 0%;
+        animation: bgsize 0.3s forwards cubic-bezier(0.175, 0.885, 0.32, 1.175);
     }
     &.about{
         background-image: url('../assets/Icons/curve2.svg');
@@ -49,6 +51,13 @@ body {
     }
   }
   
+@keyframes bgsize {
+    to{
+        background-size: 80%;
+    }
+}
+
+
 .footer{
     background-repeat: no-repeat;
     background-size: 100%;
