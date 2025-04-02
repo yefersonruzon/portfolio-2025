@@ -65,17 +65,17 @@ const elapsedTime = calculateElapsedTime();
 				/>
 			  </path>
 		</svg>
-		<section id="home" class="min-h-[72dvh] h-fit text-center w-full flex items-center flex-col gap-3 justify-center">
-			<b class="font-light mt-20 text-sm border border-details px-7 py-1.5 rounded-full">Yeferson Ruzon</b>
-			<h1 class="text-7xl font-montserrat font-semibold">Creative <span class="relative"><b class="relative font-semibold bgimage">UI/UX</b></span> <br> Designer & Web <br> Front<span class="text-primary">-</span>End Dev<span class="text-primary">.</span></h1>
-			<p class="max-w-fit text-sm text-text-details">Hi, I'm Yeferson Ruzon, a passionate UI/UX Designer & Web Front-End <br> Developer of 21 years old. My focus is on creating digital experiences that are not <br> only visually appealing, but also intuitive and functional. I combine <br> my UI/UX design skills with a strong background in front-end development <br> to build user interfaces.</p>
-			<div class="flex  items-center justify-center bg-bg border-details shadow shadow-shadow border-2 rounded-full px-5 py-2 pr-2  mt-5">
+		<section id="home" class="min-h-[72dvh] max-md:px-2 max-sm:px-0 z-40 relative h-fit text-center w-full flex items-center flex-col gap-3 justify-center">
+			<b class="font-light mt-20 max-md:mt-32 text-sm border border-details px-7 py-1.5 rounded-full">Yeferson Ruzon</b>
+			<h1 class="text-4xl md:text-7xl font-montserrat  font-semibold ">Creative <span class="relative"><b class="relative font-semibold bgimage">UI/UX</b></span> <br> Designer & Web <br> Front<span class="text-primary">-</span>End Dev<span class="text-primary">.</span></h1>
+			<p class="max-w-fit text-sm text-text-details max-md:px-14">Hi, I'm Yeferson Ruzon, a passionate UI/UX Designer & Web Front-End <br class="max-md:hidden"> Developer of 21 years old. My focus is on creating digital experiences that are not <br class="max-md:hidden"> only visually appealing, but also intuitive and functional. I combine <br class="max-md:hidden"> my UI/UX design skills with a strong background in front-end development <br class="max-md:hidden"> to build user interfaces.</p>
+			<div class="flex max-md:w-[80%] items-center justify-center bg-bg border-details shadow shadow-shadow border-2 rounded-full px-5 py-2 pr-2  mt-5">
 				<img src={mailIcon.src} alt="mail icon" class="w-5">
 				<input type="email" placeholder="Enter your email" class="w-full focus:outline-none pl-3 pr-10">
 				<button class="text-sm py-2.5 px-5 bg-primary rounded-full shadow">Contact</button>
 			</div>
 		</section>
-		<section class="flex px-28  items-center w-full h-fit">
+		<section class="flex lg:px-28 px-5  items-center w-full h-fit">
 			<IDE client:only>
 				<div slot="fallback" class="w-screen h-screen top-0 left-0 fixed z-50 bg-bg flex items-center justify-center">
 					<svg class="animate-spin" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,7 +116,7 @@ const elapsedTime = calculateElapsedTime();
 				</path>
 			</svg>
 
-			<section  id="about" class="h-fit px-28  mb-48 w-full relative flex-col flex mt-28">
+			<section  id="about" class="h-fit lg:px-28 px-10  mb-48 w-full relative flex-col flex mt-28">
 				<div class="w-full relative z-10">
 					<b class="font-light text-sm border border-details bg-bg px-7 py-1.5 rounded-full">About me</b>
 					<h2 class="text-3xl mb-4 max-w-xl mt-5 font-medium">
@@ -128,7 +128,7 @@ const elapsedTime = calculateElapsedTime();
 					<h1 class="mt-2 mb-1 text-lg">About me</h1>
 					<p class=" text-md text font-light group-hover:text-white text-gray-300 transition-colors">I'm Yeferson Ruzon, a 21 year old self-taught developer and designer whose journey into the world of technology began at the age of 17. What started as a spark of curiosity quickly turned into an unwavering passion that led me to explore the endless possibilities of programming and design. Despite the economic barriers that limited my access to formal education, I refused to let circumstances define my future. Instead, I embraced the challenge and turned to self-directed learning, free online resources, and relentless experimentation to develop my skills from the ground up. Over time, my initial fascination with programming matured into a dual specialization in front-end development and UI/UX design. This unique combination allows me to bridge the gap between functionality and aesthetics, creating digital experiences that are not only technically sound, but also visually captivating. Every line of code I write and every interface I design reflects my commitment to precision, creativity, and user-centered thinking.</p>
 				</div>
-				<div class="mt-5 relative z-10 flex gap-5 w-full">
+				<div class="mt-5 relative z-10 flex max-lg:flex-col gap-5 w-full">
 					<div class="border border-details pb-5 group p-5 rounded-lg bg-bg">
 						<img class="w-10 bg-details rounded-full p-2 " src={reactIcon.src} alt="">
 						<h1 class="mt-2 text-lg">Front-end</h1>
@@ -146,20 +146,20 @@ const elapsedTime = calculateElapsedTime();
 					</div>
 				</div>
 			</section>
-			<section id="portfolio" class="h-screen w-full relative z-10 px-10">
+			<section id="portfolio" class="h-fit lg:h-screen overflow-y-hidden w-full relative z-10 px-10">
 				<div class="w-full py-5 h-fit  text-center rounded-md">
 					<b class="font-light mt-20 text-sm border bg-bg border-details px-7 py-1.5 rounded-full">Projects</b>
 					<h3 class="text-4xl max-w-md mx-auto mt-3 font-medium">Front-End Dev & <span class="relative"><b class="relative font-medium bgimage">UI/UX</b></span> Design Portfolio</h3>
 				</div>
-				<div class="w-full h-fit my-10 px-12">
+				<div class="w-full h-fit my-10 px-12 overflow-y-hidden max-md:px-0 ">
 					<Projects client:only />
 				</div>
 			</section>
-			<section  id="contact" class="h-fit px-20 relative z-10 py-20 mb-20">
+			<section  id="contact" class="h-fit px-20 max-lg:px-8 relative z-10 py-20 mb-20">
 				<b class="font-light mt-20 text-sm border border-details px-7 py-1.5 rounded-full">Contact</b>
 				<h1 class="text-3xl mb-4 max-w-xl mt-5 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, hic.</h1>
 				<form action="" class="flex flex-col gap-3">
-					<div class="flex gap-7 w-full">
+					<div class="flex gap-7 w-full max-md:flex-col">
 						<div class="flex flex-col w-full gap-1">
 							<label for="name" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>First name</label>
 							<input type="text" name="name" placeholder="First name" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
@@ -169,7 +169,7 @@ const elapsedTime = calculateElapsedTime();
 							<input type="text" name="lastName" placeholder="Last name" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
 						</div>
 					</div>
-					<div class="flex gap-7 w-full">
+					<div class="flex gap-7 w-full max-md:flex-col">
 						<div class="flex flex-col w-full gap-1">
 							<label for="company" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Business name</label>
 							<input type="text" name="company" placeholder="Business name" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">

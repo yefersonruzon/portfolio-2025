@@ -105,7 +105,7 @@ export default function IDE() {
         <div className="flex items-center w-full">
           <div className="flex font-light items-center gap-9">
             <img src="./RZ.svg" alt="Yeferson Ruzon Logo" className="w-5" />
-            <ul className="flex items-center cursor-default justify-center text-sm gap-5 ">
+            <ul className="flex max-lg:hidden items-center cursor-default justify-center text-sm gap-5 ">
               <li className="hover:text-white">File</li>
               <li className="hover:text-white">Edit</li>
               <li className="hover:text-white">Selection</li>
@@ -115,7 +115,7 @@ export default function IDE() {
               <li className="hover:text-white">Help</li>
             </ul>
           </div>
-          <h5 className="mx-auto font-light text-sm">
+          <h5 className="mx-auto max-lg:hidden font-light text-sm">
             Portfolio{ActiveSection ? " - " + ActiveSection : ""}
           </h5>
           <ol className="flex text-white items-center justify-center -my-2 -mr-3 ml-auto">
@@ -138,8 +138,8 @@ export default function IDE() {
           </ol>
         </div>
       </header>
-      <aside className="flex h-full">
-        <div className="flex h-full">
+      <aside className="flex  h-full">
+        <div className="flex max-lg:hidden h-full">
           <div className="flex px-4 py-6 flex-col justify-between border border-t-0 border-details">
             <ul className="flex items-center flex-col gap-5">
               <li onClick={()=>setIDEActiveSection('Code')} className={`w-11 text-sm px-3 py-3 rounded-md ${IDEActiveSection === 'Code' ? 'border bg-primary border-details ' : 'hover:bg-details'}`}>
@@ -159,7 +159,7 @@ export default function IDE() {
             </ul>
           </div>
         </div>
-        <div className={`flex border-r  border-details flex-col overflow-hidden transition-discrete transition-all gap-1 ${IDEActiveSection === 'Code' ? 'w-52  px-5' : 'w-0 px-0'}`}>
+        <div className={`flex border-r max-lg:hidden border-details flex-col overflow-hidden transition-discrete transition-all gap-1 ${IDEActiveSection === 'Code' ? 'w-52  px-5' : 'w-0 px-0'}`}>
           <div className="w-full flex mt-3  justify-between items-center">
             <p className="pointer-events-none">Portfolio</p>
             <img
@@ -242,7 +242,7 @@ export default function IDE() {
             </li>
           </ul>
         </div>
-        <div className="w-full h-[77dvh] justify-between flex flex-col py-2">
+        <div className="w-full h-full lg:h-[77dvh] lg:justify-between flex flex-col py-2">
           <div className={`flex gap-3 w-full px-5 border-b pb-2  border-details min-h-10 ${recentSections.length === 0 || IDEActiveSection !== 'Code' ? 'hidden' : ''}`}>
             {recentSections.map(
               (section, index) =>
@@ -273,7 +273,7 @@ export default function IDE() {
               IDEActiveSection === 'designs' && <Projects />
             }
           </section>
-          <section className={`w-full text-sm overflow-hidden overflow-y-scroll transition-all px-5  pt-0  border border-t border-details ${IDEActiveSection === 'Code' ? 'h-[25%] py-2' : 'h-0 py-0'}`}>
+          <section className={`w-full max-lg:hidden text-sm overflow-hidden overflow-y-scroll transition-all px-5  pt-0  border border-t border-details ${IDEActiveSection === 'Code' ? 'h-[25%] py-2' : 'h-0 py-0'}`}>
             <div className="w-full text-sm flex border-b border-details justify-between px-8 py-4">
               <div className="flex gap-5">
                 <p className="relative after:absolute after:w-1/2 after:h-0.5 after:bg-text-details flex items-center justify-center after:-bottom-0.5 after:rounded-md">

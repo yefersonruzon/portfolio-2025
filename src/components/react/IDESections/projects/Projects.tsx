@@ -14,7 +14,7 @@ export default function Projects() {
     };
 
     return (
-        <main className='grid grid-cols-5 relative overflow-y-scroll h-full gap-4'>
+        <main className='grid  max-md:flex h-fit max-md:flex-col grid-cols-5 relative overflow-y-hidden gap-4'>
             {
                 projects.map((project) => {
                     return (
