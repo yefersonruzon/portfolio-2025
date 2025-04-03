@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import mailIcon from '../assets/Icons/mail.svg'
 import IDE from '../components/react/IDE';
 import reactIcon from '../assets/Icons/reactjs-fill.svg';
 import nestIcon from '../assets/Icons/nest.svg';
@@ -8,6 +7,8 @@ import figmaIcon from '../assets/Icons/figma-line.svg';
 import Projects from '../components/react/IDESections/projects/Projects';
 import Logoicon from '../assets/Icons/rz.svg';
 import Footer from '../components/Footer.astro';
+import HeroContact from '../components/react/HeroContact';
+import Contact from '../components/react/Contact';
 
 function calculateElapsedTime() {
 const startDate = new Date(2022, 9); 
@@ -23,6 +24,8 @@ return { years: totalYears, months: totalMonths };
 }
 
 const elapsedTime = calculateElapsedTime();
+
+
 
 ---
 
@@ -69,11 +72,7 @@ const elapsedTime = calculateElapsedTime();
 			<b class="font-light mt-20 max-md:mt-32 text-sm border border-details px-7 py-1.5 rounded-full">Yeferson Ruzon</b>
 			<h1 class="text-4xl md:text-7xl font-montserrat  font-semibold sm:text-6xl">Creative <span class="relative"><b class="relative font-semibold bgimage">UI/UX</b></span> <br> Designer & Web <br> Front<span class="text-primary">-</span>End Dev<span class="text-primary">.</span></h1>
 			<p class="max-w-fit text-sm text-text-details max-md:px-14">Hi, I'm Yeferson Ruzon, a passionate UI/UX Designer & Web Front-End <br class="max-md:hidden"> Developer of 21 years old. My focus is on creating digital experiences that are not <br class="max-md:hidden"> only visually appealing, but also intuitive and functional. I combine <br class="max-md:hidden"> my UI/UX design skills with a strong background in front-end development <br class="max-md:hidden"> to build user interfaces.</p>
-			<div class="flex max-md:w-[80%] items-center justify-center bg-bg border-details shadow shadow-shadow border-2 rounded-full px-5 py-2 pr-2  mt-5">
-				<img src={mailIcon.src} alt="mail icon" class="w-5">
-				<input type="email" placeholder="Enter your email" class="w-full focus:outline-none pl-3 pr-10">
-				<button class="text-sm py-2.5 px-5 bg-primary rounded-full shadow">Contact</button>
-			</div>
+			<HeroContact client:only />
 		</section>
 		<section class="flex lg:px-28 px-5 max-lg:mt-10  items-center w-full h-fit">
 			<IDE client:only>
@@ -155,36 +154,7 @@ const elapsedTime = calculateElapsedTime();
 					<Projects client:only />
 				</div>
 			</section>
-			<section  id="contact" class="h-fit px-20 max-lg:px-8 relative z-10 py-20 mb-20">
-				<b class="font-light mt-20 text-sm border border-details px-7 py-1.5 rounded-full">Contact</b>
-				<h1 class="text-3xl mb-4 max-w-xl mt-5 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, hic.</h1>
-				<form action="" class="flex flex-col gap-3">
-					<div class="flex gap-7 w-full max-md:flex-col">
-						<div class="flex flex-col w-full gap-1">
-							<label for="name" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>First name</label>
-							<input type="text" name="name" placeholder="First name" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
-						</div>
-						<div class="flex flex-col w-full gap-1">
-							<label for="lastName" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Last name</label>
-							<input type="text" name="lastName" placeholder="Last name" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
-						</div>
-					</div>
-					<div class="flex gap-7 w-full max-md:flex-col">
-						<div class="flex flex-col w-full gap-1">
-							<label for="company" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Business name</label>
-							<input type="text" name="company" placeholder="Business name" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
-						</div>
-						<div class="flex flex-col w-full gap-1">
-							<label for="email" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Email</label>
-							<input type="email" name="email" placeholder="example@mail.com" class="border border-details focus:outline-none bg-bg rounded-md px-5 py-2">
-						</div>
-					</div>
-					<div  class="flex flex-col gap-1">
-						<label for="reason" class="flex items-center"><span class="text-primary mr-1 text-4xl translate-y-[0.30rem]">*</span>Contact reason</label>
-						<textarea name="reason" placeholder="Contact reason" class="border resize-none border-details focus:outline-none bg-bg rounded-md px-5 py-2 h-32"></textarea>
-					</div>
-				</form>
-			</section>
+			<Contact client:only />
 		</div>
 	</main>
 	<Footer />

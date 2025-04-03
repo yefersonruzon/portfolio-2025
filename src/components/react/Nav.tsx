@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import cv from '../../assets/pdf/currículum.pdf'
 
 export default function Nav() {
     const [scrolled, setScrolled] = useState(false);
@@ -27,7 +28,7 @@ export default function Nav() {
     }, []);
 
     return (
-        <nav className={`flex max-md:flex-col max-md:h-20 ${showMenu && 'max-md:h-96 rounded-md' } overflow-hidden md:justify-between max-md:border-b max-md:border-details max-md:bg-bg z-50 transition-all border-details items-center fixed top-0 ${scrolled ? 'bg-bg-500 backdrop-blur-lg rounded-[5rem] border border-details w-[50vw] max-lg:w-[90vw] left-1/2 top-5 py-4 -translate-x-1/2  px-8' : 'left-0  px-16 max-md:px-10 max-lg:px-10 py-8 max-md:py-5 w-screen'}`}>
+        <nav className={`flex max-md:flex-col max-md:h-20 ${showMenu && 'max-md:h-96 rounded-md' } overflow-hidden md:justify-between max-md:border-b max-md:border-details max-md:bg-bg z-50 transition-all border-details items-center fixed top-0 ${scrolled ? 'bg-bg-500 backdrop-blur-lg rounded-[5rem] border border-details max-md:py-5 w-[50vw] max-lg:w-[90vw] left-1/2 top-5 py-4 -translate-x-1/2  px-8' : 'left-0  px-16 max-md:px-10 max-lg:px-10 py-8 max-md:py-5 w-screen'}`}>
             <div className="w-6 max-md:pb-10 max-md:w-full max-md:flex max-md:justify-between max-md:items-center">
                 <img src="/RZ.svg" className="object-contain max-md:w-5" alt="Yeferson Ruzon" />
                 <button onClick={()=> setShowMenu(!showMenu)} className='max-md:block hidden rounded-full p-2' >
@@ -48,6 +49,7 @@ export default function Nav() {
                     <span className='cursor-pointer' onClick={(e) => {
                         e.preventDefault();
                         document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+                        setShowMenu(false);
                     }}>
                         Home
                     </span>
@@ -56,6 +58,7 @@ export default function Nav() {
                     <span className='cursor-pointer' onClick={(e) => {
                         e.preventDefault();
                         document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        setShowMenu(false);
                     }}>
                         About me
                     </span>
@@ -64,6 +67,7 @@ export default function Nav() {
                     <span className='cursor-pointer' onClick={(e) => {
                         e.preventDefault();
                         document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                        setShowMenu(false);
                     }}>
                         Portfolio
                     </span>
@@ -72,11 +76,24 @@ export default function Nav() {
                     <span className='cursor-pointer' onClick={(e) => {
                         e.preventDefault();
                         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        setShowMenu(false);
                     }}>
                         Contact
                     </span>
                 </li>
-                <li className=""><button className={`bg-primary hover:bg-bg border  border-primary text-white px-6 py-2 rounded-full hover:text-primary transition-colors cursor-pointer`}>Download CV</button></li>
+                <li className="">
+                    <button 
+                        onClick={() => {
+                            const link = document.createElement('a');
+                            link.href = cv;
+                            link.download = 'curriculum.pdf';
+                            link.click();
+                        }}
+                        className={`bg-primary hover:bg-bg border border-primary text-white px-6 py-2 rounded-full hover:text-primary transition-colors cursor-pointer`}
+                    >
+                        Download CV
+                    </button>
+                </li>
             </ul>
         </nav>
     )

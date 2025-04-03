@@ -22,7 +22,7 @@ import "highlight.js/styles/atom-one-dark.css";
 import Projects from "./IDESections/projects/Projects";
 
 export default function IDE() {
-  const [ActiveSection, setActiveSection] = useState("About.astro");
+  const [ActiveSection, setActiveSection] = useState("Exp.tsx");
   const [recentSections, setRecentSections] = useState<string[]>([]);
   const [IDEActiveSection, setIDEActiveSection] = useState<string>('Code');
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
