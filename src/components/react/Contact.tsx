@@ -48,7 +48,7 @@ export default function Contact() {
     return (
         <section id="contact" className="h-fit px-20 max-lg:px-8 relative z-10 py-20 mb-20">
             <b className="font-light mt-20 text-sm border border-details px-7 py-1.5 rounded-full">Contact</b>
-            <h1 className="text-3xl mb-4 max-w-xl mt-5 font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, hic.</h1>
+            <h1 className="text-3xl mb-4 max-w-xl mt-5 font-medium">Need an expert in UX/UI and web development? Let's talk today!</h1>
             
             <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-3">
                 <div className="flex gap-7 w-full max-md:flex-col">
