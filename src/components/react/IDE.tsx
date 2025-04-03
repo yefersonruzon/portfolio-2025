@@ -6,9 +6,16 @@ import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 
 import expContent from "./IDESections/Exp.md?raw";
+
 import IGdContent from "./IDESections/IGD.md?raw";
+import IGdContentMobile from "./IDESections/IGDmobile.md?raw";
+
 import FreelancerContent from "./IDESections/Freelancer.md?raw";
+import FreelancerContentMobile from "./IDESections/Freelancermobile.md?raw";
+
 import AboutContent from "./IDESections/About.md?raw";
+import AboutContentMobile from "./IDESections/AboutMobile.md?raw";
+
 import ReadM from "./IDESections/readM.md?raw";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css";
@@ -18,7 +25,17 @@ export default function IDE() {
   const [ActiveSection, setActiveSection] = useState("About.astro");
   const [recentSections, setRecentSections] = useState<string[]>([]);
   const [IDEActiveSection, setIDEActiveSection] = useState<string>('Code');
-  const [windowState, setWindowState] = useState<'min' | 'part' | 'max' | 'close'>('max');
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
+  useEffect(() => {
+    if (isMobile) {
+      setRecentSections([
+        "About.astro",
+        "Freelance.json",
+        "IGD_S.A.S.json",
+      ])
+      setActiveSection("Freelance.json")
+  }}, []);
 
   useEffect(() => {
     setRecentSections((prevSections) => {
@@ -66,19 +83,19 @@ export default function IDE() {
       case "About.astro":
         return (
           <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
-            {AboutContent as string}
+            {isMobile? AboutContentMobile as string : AboutContent as string}
           </ReactMarkdown>
         );
       case "Freelance.json":
         return (
           <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
-            {FreelancerContent as string}
+            {isMobile ? FreelancerContentMobile as string : FreelancerContent as string}
           </ReactMarkdown>
         );
       case "IGD_S.A.S.json":
         return (
           <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
-            {IGdContent as string}
+            {isMobile ? IGdContentMobile as string : IGdContent as string}
           </ReactMarkdown>
         );
       case "Exp.tsx":
@@ -119,20 +136,15 @@ export default function IDE() {
             Portfolio{ActiveSection ? " - " + ActiveSection : ""}
           </h5>
           <ol className="flex text-white items-center justify-center -my-2 -mr-3 ml-auto">
-            <li className="hover:bg-details w-10 h-10 flex items-center justify-center" onClick={() => setWindowState('min')}>
+            <li className="hover:bg-details w-10 h-10 flex items-center justify-center" >
               <img src={recIcon.src} alt="min icon" />
             </li>
-            {
-              windowState === 'part' ?  (
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="0.5" y="0.5" width="11" height="11" rx="1.5" stroke="#C4CBDA"/>
-                </svg>
-              ) :
-              <li className="hover:bg-details w-10 h-10 flex items-center justify-center" onClick={() => setWindowState('part')}>
+            
+              <li className="hover:bg-details w-10 h-10 flex items-center justify-center" >
                 <img src={maxIcon.src} alt="max icon" />
               </li>
-            }
-            <li className="hover:bg-red-700 w-10 h-10 flex items-center justify-center" onClick={() => setWindowState('close')}>
+            
+            <li className="hover:bg-red-700 w-10 h-10 flex items-center justify-center">
               <img src={xIcon.src} alt="x icon" />
             </li>
           </ol>
@@ -242,7 +254,7 @@ export default function IDE() {
             </li>
           </ul>
         </div>
-        <div className="w-full h-full lg:h-[77dvh] lg:justify-between flex flex-col py-2">
+        <div className="w-full h-full lg:h-[77dvh] max-lg:h-screen max-lg:pb-20 lg:justify-between flex flex-col py-2">
           <div className={`flex gap-3 w-full px-5 border-b pb-2  border-details min-h-10 ${recentSections.length === 0 || IDEActiveSection !== 'Code' ? 'hidden' : ''}`}>
             {recentSections.map(
               (section, index) =>

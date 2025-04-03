@@ -4,7 +4,6 @@ import projects from './projects.json'
 export default function Projects() {
     const [Active, setActive] = useState('');
     const [isClosing, setIsClosing] = useState(false);
-
     const handleClose = () => {
         setIsClosing(true);
         setTimeout(() => {
