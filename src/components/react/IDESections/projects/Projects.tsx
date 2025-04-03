@@ -4,6 +4,7 @@ import projects from './projects.json'
 export default function Projects() {
     const [Active, setActive] = useState('');
     const [isClosing, setIsClosing] = useState(false);
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
     const handleClose = () => {
         setIsClosing(true);
         setTimeout(() => {
@@ -17,7 +18,7 @@ export default function Projects() {
             {
                 projects.map((project) => {
                     return (
-                        <div onClick={() => setActive(project.title)} key={project.title} className={`flex group showIDECard1 h-full flex-col border bg-bg hover:bg-details cursor-pointer border-details rounded-md overflow-hidden`}>
+                        <div onClick={() => !isMobile && setActive(project.title)} key={project.title} className={`flex group showIDECard1 h-full flex-col border bg-bg hover:bg-details cursor-pointer border-details rounded-md overflow-hidden`}>
                             <header className='w-[95%] h-fit overflow-hidden relative mt-2 mb-2 rounded-sm mx-auto border border-details'>
                                 <img src={project.image} alt={project.title} />
                             </header>
