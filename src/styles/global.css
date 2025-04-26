@@ -25,7 +25,6 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text);
     max-width: 100dvw;
-    overflow-x: hidden;
     font-family: var(--font-outfit);
 }
   
