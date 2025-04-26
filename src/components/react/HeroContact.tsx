@@ -37,7 +37,7 @@ export default function HeroContact() {
         return;
     }
     try {
-        const result = await emailjs.sendForm(
+          await emailjs.sendForm(
             SERVICE_ID,
             TEMPLATE_IDHero,
             form.current,
@@ -49,6 +49,7 @@ export default function HeroContact() {
         setFormStatus({ message: 'Error sending the message. Please try again.', isError: true });
     } finally {
         setIsSending(false);
+        setEmail('');
     }
 };
 

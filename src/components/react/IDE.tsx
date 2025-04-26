@@ -267,12 +267,15 @@ export default function IDE() {
                     onClick={() => setActiveSection(section)}
                   >
                     <p className="pb-0.5">{section}</p>
-                    <button
-                      className="h-full px-2 pb-1.5"
-                      onClick={() => removeRecentSection(section)}
-                    >
-                      x
-                    </button>
+                    {
+                      !isMobile && 
+                      <button
+                        className="h-full px-2 pb-1.5"
+                        onClick={() => removeRecentSection(section)}
+                      >
+                        x
+                      </button>
+                    }
                   </div>
                 )
             )}
