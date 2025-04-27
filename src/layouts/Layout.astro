@@ -18,6 +18,14 @@ import "../styles/global.css";
 	<body >
 		<Nav client:only  />
 		<slot />
+		<script>
+			if (history.scrollRestoration) {
+				history.scrollRestoration = 'manual';
+			}
+			window.onload = () => {
+				window.scrollTo(0, 0);
+			};
+		</script>
 	</body>
 </html>
 

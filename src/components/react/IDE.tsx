@@ -27,7 +27,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function IDE() {
   const [ref, inView] = useInView({
-    threshold: 1,
+    threshold: 0.99,
     triggerOnce: true
   });
   const [ActiveSection, setActiveSection] = useState("About.astro");
