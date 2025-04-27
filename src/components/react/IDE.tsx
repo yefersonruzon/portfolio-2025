@@ -20,12 +20,78 @@ import ReadM from "./IDESections/readM.md?raw";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css";
 import Projects from "./IDESections/projects/Projects";
+import { driver } from "driver.js";
+
+import "driver.js/dist/driver.css";
+import { useInView } from "react-intersection-observer";
 
 export default function IDE() {
-  const [ActiveSection, setActiveSection] = useState("Exp.tsx");
+  const [ref, inView] = useInView({
+    threshold: 1,
+    triggerOnce: true
+  });
+  const [ActiveSection, setActiveSection] = useState("About.astro");
   const [recentSections, setRecentSections] = useState<string[]>([]);
   const [IDEActiveSection, setIDEActiveSection] = useState<string>('Code');
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
+  useEffect(() => {
+    if (inView && !isMobile) {
+      document.body.style.overflow = 'hidden';
+      const driverObj = driver({
+        showProgress: true,
+        popoverClass: 'driver-popover',
+        onDestroyed: () => {
+          document.body.style.overflow = 'auto';
+        },
+        steps: [
+          {
+            element: '#freelance-json',
+            popover: {
+              title: 'Freelance Experience',
+              description: 'Explore my experience and contributions as a freelance developer.'
+            }
+          },
+          {
+            element: '#igd-json',
+            popover: {
+              title: 'IGD S.A.S Employment',
+              description: 'Details of my professional experience and responsibilities while working at IGD S.A.S.'
+            }
+          },
+          {
+            element: '#exp-tsx',
+            popover: {
+              title: 'Professional Experience Overview',
+              description: 'A concise summary highlighting my key professional experiences and achievements.'
+            }
+          },
+          {
+            element: '#about-astro',
+            popover: {
+              title: 'About Me - Professional Profile',
+              description: 'Learn more about my professional background, skills, and career aspirations.'
+            }
+          },
+          {
+            element: '#readme-md',
+            popover: {
+              title: 'Portfolio README',
+              description: 'General information and a brief overview of this portfolio website.'
+            }
+          },
+          {
+            element: '#designs',
+            popover: {
+              title: 'Design Portfolio Showcase',
+              description: 'An overview of my design projects and capabilities.'
+            }
+          }
+        ],
+      });
+      driverObj.drive();
+    }
+  }, [inView, isMobile]);
 
   useEffect(() => {
     if (isMobile) {
@@ -117,7 +183,7 @@ export default function IDE() {
   };
 
   return (
-    <div className="h-[82dvh] flex bg-bg z-10 flex-col shadow text-gray-400 shadow-shadow border w-full rounded-xl overflow-hidden border-details">
+    <div ref={ref} className="h-[82dvh] flex bg-bg z-10 flex-col shadow text-gray-400 shadow-shadow border w-full rounded-xl overflow-hidden border-details">
       <header className="flex px-7 py-5 border border-details">
         <div className="flex items-center w-full">
           <div className="flex font-light items-center gap-9">
@@ -154,13 +220,13 @@ export default function IDE() {
         <div className="flex max-lg:hidden h-full">
           <div className="flex px-4 py-6 flex-col justify-between border border-t-0 border-details">
             <ul className="flex items-center flex-col gap-5">
-              <li onClick={()=>setIDEActiveSection('Code')} className={`w-11 text-sm px-3 py-3 rounded-md ${IDEActiveSection === 'Code' ? 'border bg-primary border-details ' : 'hover:bg-details'}`}>
+              <li id="code" onClick={()=>setIDEActiveSection('Code')} className={`w-11 text-sm px-3 py-3 rounded-md ${IDEActiveSection === 'Code' ? 'border bg-primary border-details ' : 'hover:bg-details'}`}>
                 <svg className={`w-[1.2rem] fill-[#9099AC] ${IDEActiveSection === 'Code' && 'fill-white'} `} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M19.8333 26.5416H8.16658C3.02159 26.5416 1.45825 24.9783 1.45825 19.8333V8.16665C1.45825 3.02165 3.02159 1.45831 8.16658 1.45831H9.91658C11.9583 1.45831 12.5999 2.12331 13.4166 3.20831L15.1666 5.54165C15.5516 6.05498 15.6099 6.12498 16.3333 6.12498H19.8333C24.9783 6.12498 26.5416 7.68831 26.5416 12.8333V19.8333C26.5416 24.9783 24.9783 26.5416 19.8333 26.5416ZM8.16658 3.20831C3.98992 3.20831 3.20825 4.00165 3.20825 8.16665V19.8333C3.20825 23.9983 3.98992 24.7916 8.16658 24.7916H19.8333C24.0099 24.7916 24.7916 23.9983 24.7916 19.8333V12.8333C24.7916 8.66831 24.0099 7.87498 19.8333 7.87498H16.3333C14.8399 7.87498 14.3499 7.36165 13.7666 6.59165L12.0166 4.25831C11.4099 3.45331 11.2233 3.20831 9.91658 3.20831H8.16658Z"/>
                   <path d="M23.3333 8.31831C22.8549 8.31831 22.4583 7.92165 22.4583 7.44331V5.83331C22.4583 3.98998 21.6766 3.20831 19.8333 3.20831H9.33325C8.85492 3.20831 8.45825 2.81165 8.45825 2.33331C8.45825 1.85498 8.85492 1.45831 9.33325 1.45831H19.8333C22.6566 1.45831 24.2083 3.00998 24.2083 5.83331V7.44331C24.2083 7.92165 23.8116 8.31831 23.3333 8.31831Z" />
                 </svg>
               </li>
-              <li onClick={()=>setIDEActiveSection('designs')} className={`w-11 text-sm px-3 py-3 rounded-md ${IDEActiveSection === 'designs' ? 'border bg-primary border-details' : 'hover:bg-details'}`}>
+              <li id="designs" onClick={()=>setIDEActiveSection('designs')} className={`w-11 text-sm px-3 py-3 rounded-md ${IDEActiveSection === 'designs' ? 'border bg-primary border-details' : 'hover:bg-details'}`}>
                 <svg className={`w-[1.2rem] stroke-[#9099AC] ${IDEActiveSection === 'designs' && 'stroke-white'} `} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M19.8333 11.6666H22.1666C24.4999 11.6666 25.6666 10.5 25.6666 8.16665V5.83331C25.6666 3.49998 24.4999 2.33331 22.1666 2.33331H19.8333C17.4999 2.33331 16.3333 3.49998 16.3333 5.83331V8.16665C16.3333 10.5 17.4999 11.6666 19.8333 11.6666Z"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M5.83325 25.6666H8.16659C10.4999 25.6666 11.6666 24.5 11.6666 22.1666V19.8333C11.6666 17.5 10.4999 16.3333 8.16659 16.3333H5.83325C3.49992 16.3333 2.33325 17.5 2.33325 19.8333V22.1666C2.33325 24.5 3.49992 25.6666 5.83325 25.6666Z"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -190,6 +256,7 @@ export default function IDE() {
               </div>
               <ol className="ml-4 " id="expSub">
                 <li
+                  id="freelance-json"
                   className={`py-0.5 hover:text-white cursor-pointer transition-all ${
                     ActiveSection === "Freelance.json"
                       ? "bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary"
@@ -200,6 +267,7 @@ export default function IDE() {
                   <p>Freelance.json</p>
                 </li>
                 <li
+                  id="igd-json"
                   className={`py-0.5 hover:text-white cursor-pointer transition-all ${
                     ActiveSection === "IGD_S.A.S.json"
                       ? "bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary"
@@ -220,6 +288,7 @@ export default function IDE() {
               </div>
               <ol className="ml-4 " id="srcSub">
                 <li
+                  id="exp-tsx"
                   className={`py-0.5 hover:text-white cursor-pointer transition-all ${
                     ActiveSection === "Exp.tsx"
                       ? "bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary"
@@ -230,6 +299,7 @@ export default function IDE() {
                   <p>Exp.tsx</p>
                 </li>
                 <li
+                  id="about-astro"
                   className={`py-0.5 hover:text-white cursor-pointer transition-all ${
                     ActiveSection === "About.astro"
                       ? "bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary"
@@ -243,9 +313,10 @@ export default function IDE() {
             </li>
 
             <li
+              id="readme-md"
               className={`py-0.5 hover:text-white cursor-pointer transition-all ${
                 ActiveSection === "README.md"
-                  ? "bg-details rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary"
+                  ? " bg-primary text-white rounded-sm px-2 min-w-full py-1.5 my-1.5 hover:bg-primary"
                   : ""
               }`}
               onClick={() => setActiveSection("README.md")}
