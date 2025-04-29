@@ -183,7 +183,7 @@ export default function IDE() {
   };
 
   return (
-    <div ref={ref} className="h-[82dvh] flex bg-bg z-10 flex-col shadow text-gray-400 shadow-shadow border w-full rounded-xl overflow-hidden border-details">
+    <div ref={ref} className="h-[82vh] flex bg-bg z-10 flex-col shadow text-gray-400 shadow-shadow border w-full rounded-xl overflow-hidden border-details">
       <header className="flex px-7 py-5 border border-details">
         <div className="flex items-center w-full">
           <div className="flex font-light items-center gap-9">
