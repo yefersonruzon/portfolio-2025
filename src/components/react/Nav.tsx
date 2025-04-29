@@ -28,7 +28,7 @@ export default function Nav() {
     }, []);
 
     return (
-        <nav className={`flex max-md:flex-col max-md:h-20 ${showMenu && 'max-md:h-96 rounded-md' } overflow-hidden md:justify-between max-md:border-b max-md:border-details max-md:bg-bg z-50 transition-all border-details items-center fixed top-0 ${scrolled ? 'bg-bg-500 backdrop-blur-lg rounded-[5rem] border border-details max-md:py-5 w-[50vw] max-lg:w-[90vw] left-1/2 top-5 py-4 -translate-x-1/2  px-8' : 'left-0  px-16 max-md:px-10 max-lg:px-10 py-8 max-md:py-5 w-screen'}`}>
+        <nav className={`flex max-md:flex-col max-md:h-20 ${showMenu && 'max-md:h-96 rounded-md' } overflow-hidden md:justify-between max-md:border-b max-md:border-details max-md:bg-bg z-50 transition-all border-details items-center fixed top-0 ${scrolled ? 'bg-bg-500 backdrop-blur-lg rounded-[5rem] border border-details max-md:py-5 w-[50vw] max-lg:w-[90vw] left-1/2 top-5 py-4 -translate-x-1/2  px-8' : 'left-0 right-0 px-16 max-md:px-10 max-lg:px-10 py-8 max-md:py-5 w-screen'}`}>
             <div className="w-6 max-md:pb-10 max-md:w-full max-md:flex max-md:justify-between max-md:items-center">
                 <img src="/RZ.svg" className="object-contain max-md:w-5" alt="Yeferson Ruzon" />
                 <button onClick={()=> setShowMenu(!showMenu)} className='max-md:block hidden rounded-full p-2' >
