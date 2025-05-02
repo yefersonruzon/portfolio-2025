@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import cv from '../../assets/pdf/currículum.pdf'
+import cv from '../../assets/pdf/curriculum.pdf'
 
 export default function Nav() {
     const [scrolled, setScrolled] = useState(false);
